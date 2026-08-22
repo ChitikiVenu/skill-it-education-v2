@@ -1,3 +1,19 @@
+// Rotating role word in hero (fade-based, robust across fonts/sizes — no CSS em-stacking)
+(function(){
+  var el = document.getElementById('role-rotator');
+  if (!el) return;
+  var roles = ['SOC Analyst', 'Ethical Hacker', 'GenAI Engineer', 'Data Analyst', 'ML Engineer'];
+  var i = 0;
+  setInterval(function(){
+    el.style.opacity = '0';
+    setTimeout(function(){
+      i = (i + 1) % roles.length;
+      el.textContent = roles[i];
+      el.style.opacity = '1';
+    }, 250);
+  }, 2200);
+})();
+
 // Skill IT Education — shared site behaviors
 (function(){
   // Scroll-reveal: fade/slide elements into view as they enter viewport

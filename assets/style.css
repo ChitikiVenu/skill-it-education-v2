@@ -183,10 +183,13 @@ p{margin:0 0 1em;}
 
 /* ---------- Header ---------- */
 .site-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(10,18,32,0.85);
+  position:sticky;top:14px;z-index:100;
+  margin:14px 20px 0;
+  background:rgba(10,18,32,0.92);
   backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
+  border:1px solid var(--dark-line-strong);
+  border-radius:100px;
+  box-shadow:0 16px 40px -16px rgba(10,18,32,0.4);
 }
 .header-inner{
   display:flex;align-items:center;justify-content:space-between;
@@ -268,7 +271,7 @@ p{margin:0 0 1em;}
 
 /* Mobile nav */
 .mobile-nav{
-  display:none;position:fixed;inset:0;top:78px;z-index:90;
+  display:none;position:fixed;inset:0;top:106px;z-index:90;
   background:
     radial-gradient(600px 400px at 90% 0%, rgba(40,100,234,0.16), transparent 60%),
     radial-gradient(500px 350px at 0% 100%, rgba(245,148,42,0.12), transparent 60%),
@@ -295,8 +298,8 @@ p{margin:0 0 1em;}
 /* ---------- Hero ---------- */
 .hero{
   position:relative;overflow:hidden;
-  padding:100px 0 80px;
-  background:linear-gradient(180deg,#f8fafc,#ffffff 60%);
+  padding:110px 0 90px;
+  background:linear-gradient(180deg,#eef1fd,#f7f8fe 55%,#ffffff);
   border-bottom:1px solid var(--line);
 }
 .hero-waves{
@@ -306,16 +309,19 @@ p{margin:0 0 1em;}
 .hero-waves circle{fill:none;stroke:var(--blue-light);}
 .hero::after{
   content:'';position:absolute;left:-180px;bottom:-200px;width:520px;height:520px;border-radius:50%;
-  background:radial-gradient(circle, rgba(234,179,8,0.14), transparent 70%);
+  background:radial-gradient(circle, rgba(234,179,8,0.16), transparent 70%);
   pointer-events:none;z-index:0;
 }
 .hero-grid{
   position:relative;z-index:1;
   display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;
 }
-.hero h1{font-size:clamp(42px,6vw,72px);font-weight:600;}
+.hero h1{font-size:clamp(46px,6.8vw,84px);font-weight:800;letter-spacing:-0.02em;}
 .hero h1 em{font-style:normal;color:var(--blue-light);}
-.hero-sub{font-size:19px;color:var(--ink-2);max-width:540px;margin-bottom:32px;line-height:1.6;}
+.hero-sub{font-size:19px;color:var(--ink-2);max-width:540px;margin-bottom:24px;line-height:1.6;}
+.hero-features{display:flex;flex-direction:column;gap:10px;margin-bottom:30px;}
+.hero-features li{display:flex;align-items:center;gap:12px;font-size:17px;color:var(--ink-1);font-weight:500;}
+.hero-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex:none;}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px;}
 .hero-meta{display:flex;flex-wrap:wrap;gap:22px;}
 .hero-meta-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);}
@@ -510,6 +516,22 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
 .footer-legal a{font-size:12.5px;color:var(--ink-3);}
 .footer-legal a:hover{color:var(--ink-1);}
 
+/* ---------- Floating WhatsApp pill ---------- */
+.whatsapp-float{
+  position:fixed;right:24px;bottom:28px;z-index:98;
+  display:flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  padding:14px 22px 14px 18px;border-radius:100px;
+  font-weight:600;font-size:15px;
+  box-shadow:0 16px 32px -10px rgba(37,211,102,0.55);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 20px 40px -8px rgba(37,211,102,0.65);}
+.whatsapp-float svg{width:22px;height:22px;flex:none;}
+@media (max-width:980px){
+  .whatsapp-float{display:none;}
+}
+
 /* Sticky mobile CTA */
 .sticky-cta{
   display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;
@@ -527,25 +549,12 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
 .sticky-cta a.whatsapp{color:#25D366;}
 
 /* ---------- Rotating word hero ---------- */
-.roll-word-wrap{display:inline-block;position:relative;height:1.15em;overflow:hidden;vertical-align:bottom;min-width:1ch;}
-.roll-word{
+.rotator-text{
   display:inline-block;
-  animation:rollWords 9s infinite;
-}
-@keyframes rollWords{
-  0%,14%{transform:translateY(0);}
-  16.6%,30.6%{transform:translateY(-100%);}
-  33.2%,47.2%{transform:translateY(-200%);}
-  49.8%,63.8%{transform:translateY(-300%);}
-  66.4%,80.4%{transform:translateY(-400%);}
-  83%,97%{transform:translateY(-500%);}
-  100%{transform:translateY(-600%);}
-}
-.roll-list{display:flex;flex-direction:column;}
-.roll-list span{
-  height:1.15em;line-height:1.15em;
-  background:linear-gradient(135deg,var(--blue-light),var(--teal-light));
+  background:linear-gradient(135deg,var(--blue-light),var(--blue-deep));
   -webkit-background-clip:text;background-clip:text;color:transparent;
+  transition:opacity .25s ease;
+  font-weight:inherit;
 }
 
 /* ---------- Curriculum tabs ---------- */
