@@ -7,6 +7,7 @@
 <meta name="description" content="Talk to an advisor, book a free demo, or visit our campus in Madhapur, Hyderabad. Phone, WhatsApp, email and directions.">
 <meta name="theme-color" content="#0a1220">
 <link rel="icon" href="assets/logo.png">
+<link rel="canonical" href="https://www.skilliteducation.com/contact.html">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -66,21 +67,59 @@
     <div class="location-card" id="form">
       <h3 style="margin-bottom:6px">Send an enquiry</h3>
       <p style="color:var(--ink-3);font-size:13.5px;margin-bottom:22px">We'll reach out within one business day.</p>
-      <form onsubmit="event.preventDefault(); this.reset(); document.getElementById('form-success').style.display='block';" style="display:flex;flex-direction:column;gap:14px;">
-        <input required placeholder="Full name" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
-        <input required type="tel" placeholder="Phone number" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
-        <input required type="email" placeholder="Email" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
-        <select style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
+      <form id="enquiry-form" style="display:flex;flex-direction:column;gap:14px;">
+        <input type="hidden" name="_subject" value="New enquiry from skilliteducation.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input required name="name" placeholder="Full name" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
+        <input required name="phone" type="tel" placeholder="Phone number" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
+        <input required name="email" type="email" placeholder="Email" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
+        <select name="course_interest" style="background:var(--navy-900);border:1px solid var(--line-strong);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:14.5px;">
           <option>Cyber Security</option>
           <option>Generative AI</option>
           <option>Data Science</option>
           <option>Corporate Training</option>
           <option>Not sure yet</option>
         </select>
-        <button class="btn btn-primary" type="submit" style="margin-top:6px">Send enquiry</button>
+        <button class="btn btn-primary" type="submit" id="enquiry-submit-btn" style="margin-top:6px">Send enquiry</button>
         <p id="form-success" style="display:none;color:#5eead4;font-size:13.5px;margin:0;">Thanks — we'll get back to you shortly.</p>
-        <p style="font-size:12px;color:var(--ink-3);margin:0;">This form is a front-end preview. Connect it to your CRM or lead inbox to start receiving live enquiries.</p>
+        <p id="form-error" style="display:none;color:#f5942a;font-size:13.5px;margin:0;">Something went wrong — please WhatsApp us instead at <a href="https://wa.me/916362868562" style="color:inherit;text-decoration:underline">+91 63628 68562</a>.</p>
       </form>
+      <script>
+        document.getElementById('enquiry-form').addEventListener('submit', function(e){
+          e.preventDefault();
+          var form = e.target;
+          var btn = document.getElementById('enquiry-submit-btn');
+          var success = document.getElementById('form-success');
+          var error = document.getElementById('form-error');
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          error.style.display = 'none';
+          fetch('https://formsubmit.co/ajax/info@skilliteducation.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              name: form.name.value,
+              phone: form.phone.value,
+              email: form.email.value,
+              course_interest: form.course_interest.value,
+              _subject: 'New enquiry from skilliteducation.com'
+            })
+          }).then(function(res){
+            if(!res.ok) throw new Error('Request failed');
+            return res.json();
+          }).then(function(){
+            form.reset();
+            success.style.display = 'block';
+            btn.style.display = 'none';
+          }).catch(function(){
+            error.style.display = 'block';
+          }).finally(function(){
+            btn.disabled = false;
+            btn.textContent = 'Send enquiry';
+          });
+        });
+      </script>
+      <p style="font-size:12px;color:var(--ink-3);margin:8px 0 0;">Submissions are delivered by <a href="https://formsubmit.co" target="_blank" rel="noopener" style="color:inherit">FormSubmit</a> to info@skilliteducation.com. <strong>First-time setup:</strong> the very first submission triggers a one-time confirmation email to info@skilliteducation.com — click the link in it to activate delivery.</p>
     </div>
 
     <div>
