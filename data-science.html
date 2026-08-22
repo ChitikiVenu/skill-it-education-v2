@@ -66,52 +66,64 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Programs</div>
-      <h2>Data Science programs</h2>
+      <div class="eyebrow">Curriculum</div>
+      <h2>Explore the curriculum, level by level</h2>
+      <p>Real modules, real topics, real projects — pick a level to see exactly what you'll learn and build.</p>
     </div>
-    <div class="course-grid">
-      <div class="course-card">
-        <div class="course-top"><span class="track-tag data">Data Science</span></div>
-        <h4>Data Analyst Track</h4>
-        <div class="course-meta"><span>12 weeks</span><span>Beginner</span></div>
-        <p class="course-desc">Python, SQL and Power BI — joining and analyzing real business datasets end to end.</p>
-        <div class="course-foot"><span class="chip">Live + Labs</span><a href="contact.html">Enquire →</a></div>
-      </div>
-      <div class="course-card">
-        <div class="course-top"><span class="track-tag data">Data Science</span></div>
-        <h4>Machine Learning Track</h4>
-        <div class="course-meta"><span>16 weeks</span><span>Intermediate</span></div>
-        <p class="course-desc">From a clean dataset to a deployed model, with evaluation and monitoring built in.</p>
-        <div class="course-foot"><span class="chip">Live + Labs</span><a href="contact.html">Enquire →</a></div>
-      </div>
-      <div class="course-card">
-        <div class="course-top"><span class="track-tag data">Data Science</span></div>
-        <h4>Data Analytics with Power BI &amp; Tableau</h4>
-        <div class="course-meta"><span>8 weeks</span><span>Beginner</span></div>
-        <p class="course-desc">Building dashboards that answer real business questions, not just charts.</p>
-        <div class="course-foot"><span class="chip">Live + Labs</span><a href="contact.html">Enquire →</a></div>
-      </div>
-      <div class="course-card">
-        <div class="course-top"><span class="track-tag data">Data Science</span></div>
-        <h4>Data Engineering Foundations</h4>
-        <div class="course-meta"><span>10 weeks</span><span>Intermediate</span></div>
-        <p class="course-desc">ETL pipelines, data warehousing and the fundamentals of moving data reliably.</p>
-        <div class="course-foot"><span class="chip">Live + Labs</span><a href="contact.html">Enquire →</a></div>
-      </div>
-      <div class="course-card">
-        <div class="course-top"><span class="track-tag data">Data Science</span></div>
-        <h4>Statistics for Data Science</h4>
-        <div class="course-meta"><span>6 weeks</span><span>Beginner</span></div>
-        <p class="course-desc">The statistical foundation every data role actually uses day to day.</p>
-        <div class="course-foot"><span class="chip">Live + Labs</span><a href="contact.html">Enquire →</a></div>
-      </div>
-      <div class="course-card">
-        <div class="course-top"><span class="track-tag data">Data Science</span></div>
-        <h4>SQL for Data Analysis</h4>
-        <div class="course-meta"><span>4 weeks</span><span>Beginner</span></div>
-        <p class="course-desc">Querying, joining and shaping data across real multi-table datasets.</p>
-        <div class="course-foot"><span class="chip">Live + Labs</span><a href="contact.html">Enquire →</a></div>
-      </div>
+    <div class="curriculum">
+      <div class="curr-tabs"><button class="curr-tab active" data-tab="data-curr-l1" onclick="switchCurrTab('data-curr','l1')">LEVEL 1 — Data Foundations</button><button class="curr-tab" data-tab="data-curr-l2" onclick="switchCurrTab('data-curr','l2')">LEVEL 2 — Analytics & Dashboards</button><button class="curr-tab" data-tab="data-curr-l3" onclick="switchCurrTab('data-curr','l3')">LEVEL 3 — Machine Learning</button></div>
+      <div class="curr-panel active" id="data-curr-l1">
+          <div class="curr-head">
+            <div><h3>Data Foundations</h3><p>Python, SQL and statistics — the backbone of every data role.</p></div>
+            <span class="curr-badge">6 weeks · Beginner</span>
+          </div>
+          <div class="curr-grid">
+            <div class="curr-block">
+              <h4>Modules</h4>
+              <div class="curr-modules"><div class="curr-module"><span class="num">01</span><div><strong>Python for Data</strong><span>Pandas, NumPy and the day-to-day toolkit for working with data.</span></div></div><div class="curr-module"><span class="num">02</span><div><strong>SQL Fundamentals</strong><span>Querying and joining real multi-table datasets.</span></div></div><div class="curr-module"><span class="num">03</span><div><strong>Statistics Essentials</strong><span>The statistical concepts every data role actually uses.</span></div></div></div>
+              <h4>Topics Covered</h4>
+              <div class="curr-topics"><span class="chip">Pandas</span><span class="chip">SQL Joins</span><span class="chip">Descriptive Statistics</span><span class="chip">Data Cleaning</span><span class="chip">Exploratory Analysis</span></div>
+            </div>
+            <div class="curr-block">
+              <h4>Projects You'll Build</h4>
+              <div class="curr-projects"><div class="curr-project"><strong>Sales Data Cleanup & EDA</strong><span>Clean a messy real-world dataset and surface the first real insights.</span></div><div class="curr-project"><strong>SQL Business Queries</strong><span>Answer real business questions by joining across multiple tables.</span></div></div>
+            </div>
+          </div>
+        </div><div class="curr-panel" id="data-curr-l2">
+          <div class="curr-head">
+            <div><h3>Analytics & Dashboards</h3><p>Turning analysis into dashboards a business team will actually use.</p></div>
+            <span class="curr-badge">6 weeks · Intermediate</span>
+          </div>
+          <div class="curr-grid">
+            <div class="curr-block">
+              <h4>Modules</h4>
+              <div class="curr-modules"><div class="curr-module"><span class="num">01</span><div><strong>Power BI / Tableau</strong><span>Building dashboards that answer real business questions, not just charts.</span></div></div><div class="curr-module"><span class="num">02</span><div><strong>Data Storytelling</strong><span>Presenting findings so a non-technical stakeholder understands the 'so what'.</span></div></div><div class="curr-module"><span class="num">03</span><div><strong>Data Pipelines Basics</strong><span>Getting data from source to dashboard reliably.</span></div></div></div>
+              <h4>Topics Covered</h4>
+              <div class="curr-topics"><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Data Storytelling</span><span class="chip">ETL Basics</span><span class="chip">Data Modeling</span></div>
+            </div>
+            <div class="curr-block">
+              <h4>Projects You'll Build</h4>
+              <div class="curr-projects"><div class="curr-project"><strong>Sales Performance Dashboard</strong><span>Build an interactive dashboard tracking key business metrics.</span></div><div class="curr-project"><strong>Data Pipeline Prototype</strong><span>Automate moving and cleaning data from source to dashboard.</span></div></div>
+            </div>
+          </div>
+        </div><div class="curr-panel" id="data-curr-l3">
+          <div class="curr-head">
+            <div><h3>Machine Learning</h3><p>From a clean dataset to a deployed, evaluated model.</p></div>
+            <span class="curr-badge">10 weeks · Intermediate–Advanced</span>
+          </div>
+          <div class="curr-grid">
+            <div class="curr-block">
+              <h4>Modules</h4>
+              <div class="curr-modules"><div class="curr-module"><span class="num">01</span><div><strong>Supervised Learning</strong><span>Regression and classification — training and evaluating real models.</span></div></div><div class="curr-module"><span class="num">02</span><div><strong>Model Evaluation</strong><span>Metrics that matter, and how to avoid fooling yourself with them.</span></div></div><div class="curr-module"><span class="num">03</span><div><strong>Deployment Basics</strong><span>Taking a model from a notebook to something usable.</span></div></div></div>
+              <h4>Topics Covered</h4>
+              <div class="curr-topics"><span class="chip">Scikit-Learn</span><span class="chip">Regression & Classification</span><span class="chip">Model Evaluation</span><span class="chip">Feature Engineering</span><span class="chip">Basic Deployment</span></div>
+            </div>
+            <div class="curr-block">
+              <h4>Projects You'll Build</h4>
+              <div class="curr-projects"><div class="curr-project"><strong>Customer Churn Model</strong><span>Clean a dataset, train and evaluate a model, then explain results in a dashboard.</span></div><div class="curr-project"><strong>House Price Prediction</strong><span>Build and evaluate a regression model on real property data.</span></div></div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </section>
@@ -185,5 +197,13 @@
   <a href="contact.html" class="primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>Free Demo</a>
 </div>
 
+<script>
+function switchCurrTab(page, id){
+  document.querySelectorAll('.curr-tab[data-tab^="'+page+'-"]').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.curr-panel[id^="'+page+'-"]').forEach(function(p){p.classList.remove('active');});
+  document.querySelector('.curr-tab[data-tab="'+page+'-'+id+'"]').classList.add('active');
+  document.getElementById(page+'-'+id).classList.add('active');
+}
+</script>
 </body>
 </html>
