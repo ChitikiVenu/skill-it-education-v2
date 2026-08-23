@@ -316,7 +316,10 @@ p{margin:0 0 1em;}
   position:relative;z-index:1;
   display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;
 }
-.hero h1{font-size:clamp(52px,7.8vw,96px);font-weight:700;letter-spacing:-0.025em;line-height:1.02;}
+.hero h1{font-size:clamp(28px,4.6vw,58px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;white-space:nowrap;}
+@media (max-width:760px){
+  .hero h1{white-space:normal;font-size:clamp(28px,7vw,40px);}
+}
 .hero h1 em{font-style:normal;color:var(--blue-light);}
 .hero-sub{font-size:19px;color:var(--ink-2);max-width:540px;margin-bottom:24px;line-height:1.6;}
 .hero-features{display:flex;flex-direction:column;gap:10px;margin-bottom:30px;}

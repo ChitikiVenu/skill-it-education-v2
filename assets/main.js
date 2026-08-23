@@ -10,8 +10,8 @@
       i = (i + 1) % roles.length;
       el.textContent = roles[i];
       el.style.opacity = '1';
-    }, 250);
-  }, 2200);
+    }, 180);
+  }, 1400);
 })();
 
 // Skill IT Education — shared site behaviors
