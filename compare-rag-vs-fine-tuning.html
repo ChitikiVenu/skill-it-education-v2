@@ -185,14 +185,14 @@
 
 
 <section class="hero" style="padding-bottom:24px">
-  <div class="wrap" style="max-width:760px">
+  <div class="wrap" style="max-width:880px">
     <div class="eyebrow">Comparison Guide</div>
     <h1 style="max-width:720px">RAG vs. Fine-Tuning: When to Use Each</h1>
     <p class="hero-sub">Two different ways to make an LLM work better for your specific use case — and they solve different problems.</p>
   </div>
 </section>
 <section style="padding-top:0">
-  <div class="wrap" style="max-width:760px">
+  <div class="wrap" style="max-width:880px">
     <h2 style="font-size:20px;margin-top:32px">What RAG actually changes</h2><p style="color:var(--ink-2)">RAG doesn't modify the model at all — it retrieves relevant external data at query time and includes it in the prompt. The model's underlying knowledge and behavior stay exactly the same.</p><h2 style="font-size:20px;margin-top:32px">What fine-tuning actually changes</h2><p style="color:var(--ink-2)">Fine-tuning updates the model's internal weights through additional training, changing how it behaves or responds — useful for adjusting tone, format, or specialized reasoning patterns.</p><h2 style="font-size:20px;margin-top:32px">When RAG is the right choice</h2><p style="color:var(--ink-2)">When your data changes frequently, when you need traceable sources for answers, or when you don't have the resources to fine-tune and maintain a custom model.</p><h2 style="font-size:20px;margin-top:32px">When fine-tuning is the right choice</h2><p style="color:var(--ink-2)">When you need consistent behavior change across all interactions — a specific tone, a specialized reasoning style — that prompting and retrieval alone can't reliably achieve.</p><h2 style="font-size:20px;margin-top:32px">Can you use both together?</h2><p style="color:var(--ink-2)">Yes — some production systems fine-tune a model for behavior and style, then still use RAG to ground it in current, specific data. They solve different problems and aren't mutually exclusive.</p>
     <div style="margin-top:36px"><a href="rag-course.html" class="btn btn-outline btn-sm" style="margin-right:10px">RAG Systems</a><a href="genai-llm-engineering-course.html" class="btn btn-outline btn-sm" style="margin-right:10px">GenAI & LLM Engineering</a></div>
   </div>

@@ -312,8 +312,8 @@ p{margin:0 0 1em;}
   border-bottom:1px solid var(--line);
 }
 .hero-waves{
-  position:absolute;top:-120px;right:-160px;width:820px;height:820px;
-  pointer-events:none;z-index:0;
+  position:absolute;top:-100px;right:-140px;width:600px;height:600px;
+  pointer-events:none;z-index:0;opacity:0.7;
 }
 .hero-waves circle{fill:none;stroke:var(--blue-light);}
 .hero::after{
