@@ -119,7 +119,7 @@ p{margin:0 0 1em;}
 
 /* Dark-surface overrides: header, mega menu, mobile nav, final CTA, footer, sticky CTA
    all keep light text regardless of the light-theme ink variables above */
-.site-header, .mega, .mobile-nav, .final-cta, footer, .sticky-cta, .curr-tabs, .compare-table th, .project-visual, .map-frame{
+.mega, .mobile-nav, .final-cta, footer, .sticky-cta, .curr-tabs, .compare-table th, .project-visual, .map-frame{
   --ink-0:var(--dark-ink-0);
   --ink-1:var(--dark-ink-1);
   --ink-2:var(--dark-ink-2);
@@ -185,11 +185,11 @@ p{margin:0 0 1em;}
 .site-header{
   position:sticky;top:14px;z-index:100;
   margin:14px 20px 0;
-  background:rgba(10,18,32,0.92);
+  background:rgba(255,255,255,0.85);
   backdrop-filter:blur(14px);
-  border:1px solid var(--dark-line-strong);
+  border:1px solid var(--line-strong);
   border-radius:100px;
-  box-shadow:0 16px 40px -16px rgba(10,18,32,0.4);
+  box-shadow:0 16px 40px -16px rgba(15,23,42,0.18);
 }
 .header-inner{
   display:flex;align-items:center;justify-content:space-between;
@@ -208,8 +208,8 @@ p{margin:0 0 1em;}
   border-radius:100px;transition:color .18s ease, background .18s ease;
   position:relative;white-space:nowrap;flex:none;
 }
-.nav-item:hover .nav-link{color:#fff;background:rgba(255,255,255,0.055);}
-.nav-link.active{color:#fff;background:linear-gradient(135deg,rgba(40,100,234,0.22),rgba(40,100,234,0.1));box-shadow:inset 0 0 0 1px rgba(40,100,234,0.3);}
+.nav-item:hover .nav-link{color:var(--ink-0);background:rgba(15,23,42,0.06);}
+.nav-link.active{color:var(--blue);background:linear-gradient(135deg,rgba(40,100,234,0.14),rgba(40,100,234,0.06));box-shadow:inset 0 0 0 1px rgba(40,100,234,0.25);}
 .nav-link svg{width:12px;height:12px;opacity:.55;transition:transform .2s ease;}
 .nav-item:hover .nav-link svg{transform:rotate(180deg);opacity:.9;}
 
@@ -267,7 +267,7 @@ p{margin:0 0 1em;}
 }
 .icon-btn:hover{background:rgba(37,211,102,0.22);}
 .icon-btn svg{width:20px;height:20px;}
-.nav-toggle{display:none;align-items:center;justify-content:center;background:none;border:none;color:#fff;width:40px;height:40px;cursor:pointer;flex:none;padding:0;}
+.nav-toggle{display:none;align-items:center;justify-content:center;background:none;border:none;color:var(--ink-0);width:40px;height:40px;cursor:pointer;flex:none;padding:0;}
 .nav-toggle svg{width:24px;height:24px;flex:none;display:block;}
 
 /* Mobile nav */
