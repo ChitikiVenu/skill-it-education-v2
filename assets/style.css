@@ -3,8 +3,7 @@
    Navy foundation · Electric blue + signal orange accents
    ============================================================ */
 
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
 
 :root{
   /* Light page surfaces */
@@ -63,9 +62,9 @@
   --radius-md:14px;
   --radius-lg:22px;
 
-  --font-display:'Clash Display', 'General Sans', sans-serif;
-  --font-body:'General Sans', sans-serif;
-  --font-mono:'JetBrains Mono', monospace;
+  --font-display:Calibri, Candara, 'Segoe UI', Optima, Arial, sans-serif;
+  --font-body:Calibri, Candara, 'Segoe UI', Optima, Arial, sans-serif;
+  --font-mono:Calibri, Candara, 'Segoe UI', Optima, Arial, sans-serif;
 
   --container:1240px;
 }
@@ -203,7 +202,7 @@ p{margin:0 0 1em;}
   min-width:0;overflow:hidden;
 }
 .brand-line1{font-size:21px;font-weight:800;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-0);}
-.brand-line1 em{font-style:normal;color:var(--gold);}
+.brand-line1 em{font-style:normal;color:var(--gold);display:inline;}
 .brand-line2{
   font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--ink-0);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
