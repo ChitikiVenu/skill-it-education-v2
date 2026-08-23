@@ -197,7 +197,17 @@ p{margin:0 0 1em;}
 }
 .brand{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0;overflow:hidden;}
 .brand img{height:52px;width:auto;flex:none;}
-.brand-word{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--ink-0);letter-spacing:-0.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
+.brand-word{
+  display:flex;flex-direction:column;justify-content:center;gap:2px;
+  font-family:var(--font-display);color:var(--ink-0);letter-spacing:-0.01em;
+  min-width:0;overflow:hidden;
+}
+.brand-line1{font-size:19px;font-weight:800;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brand-line1 em{font-style:normal;color:var(--blue-light);}
+.brand-line2{
+  font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
 .brand-word span{color:var(--blue-light);}
 
 .main-nav{display:flex;align-items:center;gap:4px;flex:1;justify-content:center;}
@@ -333,6 +343,19 @@ p{margin:0 0 1em;}
 .hero-meta-item svg{width:16px;height:16px;color:var(--gold-text);flex:none;}
 
 .hero-visual{position:relative;height:440px;z-index:1;}
+
+/* ---------- Hero visual node motion ---------- */
+.hv-float-1{animation:hvFloat1 6s ease-in-out infinite;}
+.hv-float-2{animation:hvFloat2 7s ease-in-out infinite;}
+.hv-float-3{animation:hvFloat3 6.5s ease-in-out infinite;}
+.hv-float-4{animation:hvFloat4 7.5s ease-in-out infinite;}
+@keyframes hvFloat1{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes hvFloat2{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+@keyframes hvFloat3{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes hvFloat4{0%,100%{transform:translateY(0);}50%{transform:translateY(9px);}}
+@media (prefers-reduced-motion: reduce){
+  .hv-float-1,.hv-float-2,.hv-float-3,.hv-float-4{animation:none;}
+}
 
 /* ---------- Organic blob decorations ---------- */
 .blob-field{position:absolute;top:0;right:0;bottom:0;left:0;overflow:visible;pointer-events:none;z-index:-1;}
@@ -738,6 +761,7 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
   .method-steps{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
   .trust-row{justify-content:flex-start;}
-  .brand-word{font-size:16px;}
+  .brand-line1{font-size:15px;}
+  .brand-line2{font-size:9px;}
   .brand img{height:40px;}
 }
