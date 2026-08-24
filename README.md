@@ -8,12 +8,16 @@ static HTML site — nothing here has been deployed or merged anywhere.
 
 ## Design direction
 
-- **Palette**: warm paper (`#EFE9DD`) rather than the common cream/`#F4F1EA`
-  template default; ink-green accent (`#3B5D48`) rather than the equally
-  common terracotta. Track colors (indigo / ochre / ink-green) read as
-  field markers rather than primary-color chips.
+- **Palette (updated)**: white ground with a rich blue primary (`#2C46D6`)
+  and violet secondary accent (`#7C4FE0`), per direction requested after
+  the initial warm/paper version. Blue and violet are used deliberately
+  as solid colors for actions/links/track markers, not as a gradient
+  wash, to avoid reading as the generic "electric blue-to-violet
+  gradient on dark" AI-template look.
 - **Type**: Source Serif 4 (a calm, low-contrast literary serif) for
-  headlines, Inter for body copy, JetBrains Mono for small utility labels.
+  headlines, Inter for body copy, JetBrains Mono for small utility labels
+  — kept from the original editorial direction since it's what keeps the
+  cooler palette from reading as a generic SaaS dashboard.
 - **Signature**: section eyebrows are styled as a field-note dateline —
   a thin rule beside a short italic caption — and the hero uses a
   captioned spot illustration (styled like a documentary photo plate)
@@ -59,21 +63,24 @@ at 375/390/430/768/1024/1280/1440/1920px viewports.
 - `/courses/[slug]` — all 18 individual course detail pages (curriculum
   modules, project, FAQ), data-driven from `src/data/course-details.ts`,
   extracted from the real static course pages
+- `/blog` and `/blog/[slug]` — all 27 blog posts, full body content,
+  data-driven from `src/data/blog-posts.ts`, extracted from the real
+  static blog posts
 - Header, Footer, reusable UI primitives (Button, Accordion, FieldNote)
 
-Verified: `tsc --noEmit` clean, `next build` clean (27 static routes,
-18 of them SSG'd course pages), zero horizontal overflow at
+Verified: `tsc --noEmit` clean, `next build` clean (55 static routes, 45
+of them SSG'd course/blog pages), zero horizontal overflow at
 375/390/768/1440px across every page type.
 
 ## Not built yet
 
-Still ~230 pages of the original 254-page site to go, same data-driven-
-template approach as the course pages:
+Still ~200 pages of the original 254-page site to go, same data-driven-
+template approach as the course/blog pages:
 
-- ~30 blog posts, ~140 glossary term pages, 8 certification pages,
-  7 comparison pages, 12 career roadmaps, 11 interview-question pages,
-  6 free tools, 8 location/training-near pages, About, Careers, Locations,
-  Resources, Events, legal pages (privacy/terms/refund/disclaimer)
+- ~140 glossary term pages, 8 certification pages, 7 comparison pages,
+  12 career roadmaps, 11 interview-question pages, 6 free tools, 8
+  location/training-near pages, About, Careers, Locations, Resources,
+  Events, legal pages (privacy/terms/refund/disclaimer)
 - Lead form (`Zod` validated) + CRM integration seam (`lib/crm`)
 - Database (Prisma + Postgres) / CMS (Sanity) — needs real credentials
 - Full technical SEO pass, analytics, accessibility audit

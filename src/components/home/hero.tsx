@@ -56,33 +56,33 @@ export function Hero() {
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-ink-950)]">
               <svg viewBox="0 0 480 560" className="h-full w-full" role="img" aria-label="Illustration of a lab workstation with layered data panels">
                 <rect width="480" height="560" fill="var(--color-ink-950)" />
-                <g opacity="0.5" stroke="#8a8367" strokeWidth="1">
+                <g opacity="0.5" stroke="#6b70a8" strokeWidth="1">
                   <line x1="0" y1="140" x2="480" y2="140" />
                   <line x1="0" y1="420" x2="480" y2="420" />
                   <line x1="160" y1="0" x2="160" y2="560" />
                 </g>
-                <rect x="60" y="190" width="220" height="150" rx="4" fill="none" stroke="#c9c0a5" strokeWidth="1.5" opacity="0.8" />
-                <rect x="90" y="220" width="120" height="8" fill="#a8752b" opacity="0.85" />
-                <rect x="90" y="240" width="160" height="6" fill="#c9c0a5" opacity="0.5" />
-                <rect x="90" y="256" width="90" height="6" fill="#c9c0a5" opacity="0.5" />
-                <rect x="90" y="280" width="150" height="34" fill="none" stroke="#5c8069" strokeWidth="1.2" opacity="0.8" />
-                <polyline points="98,306 118,292 138,300 158,282 178,296 198,286 220,298" fill="none" stroke="#5c8069" strokeWidth="1.6" />
-                <rect x="230" y="150" width="190" height="230" rx="4" fill="none" stroke="#c9c0a5" strokeWidth="1.5" opacity="0.55" />
-                <circle cx="325" cy="245" r="46" fill="none" stroke="#a8752b" strokeWidth="1.2" opacity="0.7" />
-                <circle cx="325" cy="245" r="30" fill="none" stroke="#a8752b" strokeWidth="1" opacity="0.5" />
-                <line x1="325" y1="199" x2="325" y2="291" stroke="#a8752b" strokeWidth="0.75" opacity="0.4" />
-                <line x1="279" y1="245" x2="371" y2="245" stroke="#a8752b" strokeWidth="0.75" opacity="0.4" />
+                <rect x="60" y="190" width="220" height="150" rx="4" fill="none" stroke="#b4b8dd" strokeWidth="1.5" opacity="0.8" />
+                <rect x="90" y="220" width="120" height="8" fill="#7c4fe0" opacity="0.85" />
+                <rect x="90" y="240" width="160" height="6" fill="#b4b8dd" opacity="0.5" />
+                <rect x="90" y="256" width="90" height="6" fill="#b4b8dd" opacity="0.5" />
+                <rect x="90" y="280" width="150" height="34" fill="none" stroke="#5b72e8" strokeWidth="1.2" opacity="0.8" />
+                <polyline points="98,306 118,292 138,300 158,282 178,296 198,286 220,298" fill="none" stroke="#5b72e8" strokeWidth="1.6" />
+                <rect x="230" y="150" width="190" height="230" rx="4" fill="none" stroke="#b4b8dd" strokeWidth="1.5" opacity="0.55" />
+                <circle cx="325" cy="245" r="46" fill="none" stroke="#7c4fe0" strokeWidth="1.2" opacity="0.7" />
+                <circle cx="325" cy="245" r="30" fill="none" stroke="#7c4fe0" strokeWidth="1" opacity="0.5" />
+                <line x1="325" y1="199" x2="325" y2="291" stroke="#7c4fe0" strokeWidth="0.75" opacity="0.4" />
+                <line x1="279" y1="245" x2="371" y2="245" stroke="#7c4fe0" strokeWidth="0.75" opacity="0.4" />
                 <g opacity="0.85">
-                  <rect x="270" y="315" width="24" height="10" fill="#3a4f7a" />
-                  <rect x="298" y="305" width="24" height="20" fill="#3a4f7a" />
-                  <rect x="326" y="295" width="24" height="30" fill="#5c8069" />
-                  <rect x="354" y="300" width="24" height="25" fill="#3a4f7a" />
-                  <rect x="382" y="290" width="24" height="35" fill="#a8752b" />
+                  <rect x="270" y="315" width="24" height="10" fill="#2c46d6" />
+                  <rect x="298" y="305" width="24" height="20" fill="#2c46d6" />
+                  <rect x="326" y="295" width="24" height="30" fill="#1f8fd6" />
+                  <rect x="354" y="300" width="24" height="25" fill="#2c46d6" />
+                  <rect x="382" y="290" width="24" height="35" fill="#7c4fe0" />
                 </g>
-                <text x="60" y="470" fill="#f8f4ea" fontFamily="var(--font-display)" fontStyle="italic" fontSize="17">
+                <text x="60" y="470" fill="#f5f6fd" fontFamily="var(--font-display)" fontStyle="italic" fontSize="17">
                   Fig. 01 — a lab session, in progress
                 </text>
-                <text x="60" y="495" fill="#c9c0a5" fontFamily="var(--font-mono)" fontSize="11" letterSpacing="0.05em">
+                <text x="60" y="495" fill="#b4b8dd" fontFamily="var(--font-mono)" fontSize="11" letterSpacing="0.05em">
                   MODULE 3 · LOG ANALYSIS · MADHAPUR CAMPUS
                 </text>
               </svg>

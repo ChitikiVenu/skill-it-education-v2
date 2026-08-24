@@ -10,45 +10,46 @@
 @import "@fontsource/jetbrains-mono/500.css";
 
 /*
-  Design tokens — Skill IT Education (Editorial direction)
+  Design tokens — Skill IT Education (Premium blue/violet direction)
   --------------------------------------------------------
-  A documentary, field-notes register rather than a SaaS-dashboard
-  one: a warm, slightly grey-cast paper ground (not the ubiquitous
-  cream-#F4F1EA), a low-contrast literary serif for display type
-  (not a flashy high-contrast Didone), and an ink-green accent in
-  place of the equally ubiquitous terracotta. Track colors read as
-  three field markers — indigo, ochre, ink-green — rather than
-  primary-color chips.
+  White ground with a rich blue primary and a violet secondary accent,
+  used deliberately rather than as a gradient wash — solid blue for
+  primary actions and links, violet reserved for the Generative AI
+  track and small highlight moments, so the combination reads as a
+  considered palette rather than the default "electric blue-to-violet
+  gradient on dark" AI-template look. Literary serif headlines (kept
+  from the editorial direction) keep it from reading as a generic
+  SaaS dashboard despite the cooler palette.
 */
 :root {
-  --color-paper: #efe9dd;
-  --color-paper-raised: #f8f4ea;
-  --color-paper-sunken: #e5ded0;
+  --color-paper: #ffffff;
+  --color-paper-raised: #ffffff;
+  --color-paper-sunken: #eef1fb;
 
-  --color-ink-950: #211f1a;
-  --color-ink-900: #2b2822;
-  --color-ink-800: #3a362d;
+  --color-ink-950: #12142b;
+  --color-ink-900: #191c3a;
+  --color-ink-800: #242850;
 
-  --color-surface: #f8f4ea;
-  --color-surface-muted: #efe9dd;
-  --color-surface-sunken: #e5ded0;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f6fc;
+  --color-surface-sunken: #eaedf9;
 
-  --color-border: #ded5c1;
-  --color-border-strong: #c7bba0;
+  --color-border: #e2e6f5;
+  --color-border-strong: #c7cdec;
 
-  --color-text: #211f1a;
-  --color-text-secondary: #58523f;
-  --color-text-tertiary: #837c65;
-  --color-text-on-dark: #f8f4ea;
-  --color-text-on-dark-secondary: #c9c0a5;
+  --color-text: #14162c;
+  --color-text-secondary: #4d5175;
+  --color-text-tertiary: #7d81a3;
+  --color-text-on-dark: #f5f6fd;
+  --color-text-on-dark-secondary: #b4b8dd;
 
-  --color-brand: #3b5d48;
-  --color-brand-dark: #24392c;
-  --color-brand-light: #5c8069;
+  --color-brand: #2c46d6;
+  --color-brand-dark: #1c2e94;
+  --color-brand-light: #5b72e8;
 
-  --color-track-cyber: #3a4f7a;
-  --color-track-ai: #a8752b;
-  --color-track-data: #3b5d48;
+  --color-track-cyber: #2c46d6;
+  --color-track-ai: #7c4fe0;
+  --color-track-data: #1f8fd6;
 
   --radius-sm: 4px;
   --radius-md: 6px;
