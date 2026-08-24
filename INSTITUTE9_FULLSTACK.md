@@ -22,10 +22,10 @@ git clone https://github.com/ChitikiVenu/skill-it-education-v2.git
 cd skill-it-education-v2
 git checkout institute9-fullstack
 npm install
-cp platform/.env.example platform/.env.local
+cp platform/.env.example platform/.env
 docker compose up -d
 npm run db:generate
-npm run db:migrate -- --name init
+npm --workspace platform exec prisma migrate deploy
 npm run db:seed
 npm run dev
 ```
@@ -50,6 +50,21 @@ For production, apply checked-in Prisma migrations with `prisma migrate deploy` 
 ## Lead capture
 
 The Free Session form validates name, email, phone, course interest and consent on the server and writes the lead to PostgreSQL. This gives Institute 9 a real admissions data layer instead of a mailto-only form.
+
+## One-command local startup
+
+macOS/Linux:
+
+```bash
+chmod +x scripts/start-local.sh
+./scripts/start-local.sh
+```
+
+Windows PowerShell:
+
+```powershell
+.\scripts\start-local.ps1
+```
 
 ## Next production layers
 
