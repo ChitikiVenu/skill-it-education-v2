@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/manrope/800.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+/*
+  Design tokens — Skill IT Education
+  --------------------------------------------------------
+  Palette: near-black ink for authority, a refined signal-blue
+  as the primary brand color (continuity with the existing
+  site's blue identity, sharpened for a premium register), and
+  two track accents — amber for Generative AI, teal for Data
+  Science — so the three pillars stay visually distinct without
+  turning every section into a rainbow.
+*/
+:root {
+  --color-ink-950: #0a0e17;
+  --color-ink-900: #101728;
+  --color-ink-800: #1a2338;
+  --color-ink-600: #3d4a63;
+
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f7fb;
+  --color-surface-sunken: #eef1f7;
+
+  --color-border: #e3e7ef;
+  --color-border-strong: #c9d0dd;
+
+  --color-text: #0f1522;
+  --color-text-secondary: #4b5568;
+  --color-text-tertiary: #7c8598;
+  --color-text-on-dark: #f4f6fb;
+  --color-text-on-dark-secondary: #a7b1c4;
+
+  --color-brand: #2148d6;
+  --color-brand-dark: #16307e;
+  --color-brand-light: #5b7cf5;
+
+  --color-track-cyber: #2148d6;
+  --color-track-ai: #d97a19;
+  --color-track-data: #0f9c8f;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-600: var(--color-ink-600);
+
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-surface-sunken: var(--color-surface-sunken);
+
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-on-dark: var(--color-text-on-dark);
+  --color-text-on-dark-secondary: var(--color-text-on-dark-secondary);
+
+  --color-brand: var(--color-brand);
+  --color-brand-dark: var(--color-brand-dark);
+  --color-brand-light: var(--color-brand-light);
+
+  --color-track-cyber: var(--color-track-cyber);
+  --color-track-ai: var(--color-track-ai);
+  --color-track-data: var(--color-track-data);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-feature-settings: "cv11", "ss01";
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}

@@ -1,34 +1,59 @@
-# Skill IT Education — Website (Phase 1, Complete — 37 pages)
+# Skill IT Education — Next.js Rebuild (in progress)
 
-Premium static marketing site for Skill IT Education, a Cyber Security + Generative AI + Data Science academy in Madhapur, Hyderabad.
+This branch (`nextjs-rebuild`) is a ground-up rebuild of the marketing site
+as a production Next.js application. The `main` branch remains the live
+static HTML site — nothing here has been deployed yet.
 
-## Pages (37 total)
-- `index.html` — homepage (rotating hero, 3 pillars, courses, methodology, comparison table, FAQ, location)
-- `cyber-security.html`, `generative-ai.html`, `data-science.html` — vertical hubs with tabbed Level 1–3 curriculum explorer + links to all individual course pages
-- **18 individual course pages** — one per course, each with overview, who-should-attend, prerequisites, module breakdown, tools, projects, career roles, FAQs, and CTAs:
-  - Cyber Security: `soc-analyst-course.html`, `ethical-hacking-course.html`, `penetration-testing-course.html`, `cloud-security-course.html`, `digital-forensics-course.html`, `network-security-course.html`
-  - Generative AI: `genai-llm-engineering-course.html`, `ai-engineering-course.html`, `rag-course.html`, `ai-agents-course.html`, `prompt-engineering-course.html`, `ai-automation-course.html`
-  - Data Science: `data-analyst-course.html`, `machine-learning-course.html`, `data-analytics-course.html`, `data-engineering-course.html`, `statistics-course.html`, `sql-course.html`
-- `careers.html` — role-based career hub
-- `blog.html` + 3 articles (SOC Analyst Roadmap, What Is RAG, Data Analyst vs. Data Scientist)
-- `resources.html`, `corporate.html`, `locations.html`
-- `about.html`, `contact.html`
-- `privacy-policy.html`, `terms.html`, `refund-policy.html`, `disclaimer.html`
-- `404.html`
+## Stack
 
-## Scope of this build
-This is **Phase 1**: the complete public marketing website, built to a premium visual standard with a full mega menu, transparent logo, social integration, interactive curriculum explorers, individual course landing pages, and honest placeholders where real data (trainer bios, reviews, placement stats, live fees) isn't available yet.
+- **Next.js 16** (App Router) + **React 19** + **TypeScript** (strict)
+- **Tailwind CSS 4** — design tokens defined in `src/app/globals.css`
+- Hand-built component primitives in the shadcn/ui style (`src/components/ui`),
+  backed by **Radix UI** for accessible interaction (accordion, etc.)
+- **Framer Motion**, **lucide-react**, **Zod** installed and ready for use
+- Fonts self-hosted via `@fontsource/*` (Manrope for display, Inter for body,
+  JetBrains Mono for the "log line" UI signature) rather than fetched from
+  Google Fonts at build time
 
-**Not included** (would require real backend infrastructure — database, auth, payment gateway):
-- CRM / lead management system
-- LMS / student dashboard / course delivery
-- Payments, admissions, certificate issuance
-- Job board, internship portal, community features
+## What's built so far
 
-These are described in the original spec as later phases and can be scoped as a separate engineering project.
+- Design system / tokens (`src/app/globals.css`)
+- `Header`, `Footer` (`src/components/layout`)
+- Homepage (`src/app/page.tsx`) assembled from real content:
+  Hero, Career Paths, Why Skill IT, Featured Programs, Learning Journey,
+  FAQ, Final CTA
+- Typed content layer (`src/data/site.ts`) — pulled from the existing
+  static site's real copy, course names, durations and contact info.
+  **This is the intended seam for a future CMS** (Sanity, etc.): components
+  read from these exports, never from hardcoded JSX, so swapping the data
+  source later shouldn't require touching UI code.
 
-## To do before going live
-- Connect the contact form to a real CRM/email endpoint
-- Add real trainer bios, student stories, campus photography, and current fees/batch dates (marked as placeholders currently)
-- Add YouTube / Instagram / Facebook / X links (currently placeholder `#`, LinkedIn is live)
-- Have privacy/terms/refund/disclaimer pages reviewed by a qualified professional
+Verified: `tsc --noEmit` clean, `next build` clean, zero horizontal overflow
+at 375/390/430/768/1024/1280/1440/1920px viewports.
+
+## Not built yet
+
+This is Phase 1–4 of a much larger brief (see project notes). Still to do:
+
+- Individual course pages, Cyber Security / Generative AI / Data Science
+  hub pages, career-paths, about, contact, blog
+- Lead form (`Zod` validated) + CRM integration seam (`lib/crm`)
+- Analytics event tracking
+- Database (Prisma + Postgres) — **needs real credentials**, not something
+  that can be stood up from this environment
+- CMS wiring (Sanity) — **needs a real Sanity project/token**
+- Full technical SEO pass (structured data, sitemap, redirects from old URLs)
+- Accessibility and performance QA pass across all pages
+
+## Running locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Content
+
+All copy and course data currently comes from the live static site (see
+`main` branch) as the factual source of truth — no invented claims,
+statistics, testimonials, or placement numbers.
