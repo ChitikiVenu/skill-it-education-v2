@@ -31,13 +31,13 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-colors duration-200 ${
         scrolled
-          ? "bg-white/85 backdrop-blur-md border-b border-[var(--color-border)]"
-          : "bg-white/0 border-b border-transparent"
+          ? "bg-[var(--color-surface)]/90 backdrop-blur-md border-b border-[var(--color-border)]"
+          : "bg-[var(--color-surface)]/0 border-b border-transparent"
       }`}
     >
       <Container className="flex h-[72px] items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 font-[var(--font-display)] font-extrabold text-[17px] text-[var(--color-ink-950)]">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-ink-950)] text-white text-[13px] font-[var(--font-mono)]">
+        <Link href="/" className="flex items-center gap-2.5 font-[var(--font-display)] font-semibold text-[18px] text-[var(--color-ink-950)]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--color-ink-950)] text-[var(--color-paper-raised)] text-[13px] font-[var(--font-mono)]">
             SI
           </span>
           Skill IT
@@ -66,21 +66,21 @@ export function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)]"
+          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--color-border)]"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </Container>
 
       {open && (
-        <div className="lg:hidden border-t border-[var(--color-border)] bg-white">
+        <div className="lg:hidden border-t border-[var(--color-border)] bg-[var(--color-surface)]">
           <Container className="flex flex-col gap-1 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-[15px] font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]"
+                className="rounded-[var(--radius-sm)] px-3 py-3 text-[15px] font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]"
               >
                 {item.label}
               </Link>

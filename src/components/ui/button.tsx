@@ -4,19 +4,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonStyles = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-150 focus-visible:outline-none disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap",
+  "inline-flex items-center justify-center gap-2 font-medium transition-colors duration-150 focus-visible:outline-none disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap rounded-[var(--radius-sm)]",
   {
     variants: {
       variant: {
         primary:
-          "bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-dark)]",
+          "bg-[var(--color-ink-950)] text-[var(--color-paper-raised)] hover:bg-[var(--color-ink-800)]",
         onDark:
-          "bg-white text-[var(--color-ink-950)] hover:bg-white/90",
+          "bg-[var(--color-paper-raised)] text-[var(--color-ink-950)] hover:bg-white",
         outline:
-          "border border-[var(--color-border-strong)] text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]",
+          "border border-[var(--color-border-strong)] text-[var(--color-text)] hover:bg-[var(--color-surface-sunken)]",
         outlineOnDark:
           "border border-white/25 text-white hover:bg-white/10",
-        ghost: "text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]",
+        ghost: "text-[var(--color-text)] hover:bg-[var(--color-surface-sunken)] rounded-[var(--radius-sm)]",
+        link: "text-[var(--color-brand)] underline underline-offset-4 decoration-[var(--color-border-strong)] hover:decoration-current",
       },
       size: {
         default: "h-12 px-6 text-[15px]",

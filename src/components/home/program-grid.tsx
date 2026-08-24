@@ -1,6 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { LogTag } from "@/components/ui/log-tag";
+import { FieldNote } from "@/components/ui/field-note";
 import { Button } from "@/components/ui/button";
 import { programs, tracks, type Track } from "@/data/site";
 
@@ -16,46 +16,43 @@ export function ProgramGrid() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <LogTag index={3}>Featured Programs</LogTag>
-            <h2 className="mt-4 max-w-[520px] font-[var(--font-display)] text-[30px] font-bold leading-tight text-[var(--color-text)] md:text-[38px]">
+            <FieldNote index={3}>Featured Programs</FieldNote>
+            <h2 className="mt-5 max-w-[520px] font-[var(--font-display)] text-[30px] font-semibold leading-tight text-[var(--color-text)] md:text-[36px]">
               Six programs to start with
             </h2>
           </div>
-          <Button href="/career-paths" variant="outline">
+          <Button href="/career-paths" variant="link">
             View all programs
           </Button>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 divide-y divide-[var(--color-border)] border-t border-[var(--color-border)]">
           {programs.map((p) => (
             <a
               key={p.href}
               href={p.href}
-              className="group flex flex-col rounded-[var(--radius-md)] border border-[var(--color-border)] p-6 transition-colors hover:border-[var(--color-border-strong)]"
+              className="group grid gap-2 py-6 sm:grid-cols-[140px_1fr_auto] sm:items-center sm:gap-6"
             >
               <span
-                className="w-fit rounded-full px-2.5 py-1 font-[var(--font-mono)] text-[10.5px] font-medium uppercase tracking-[0.08em]"
-                style={{
-                  color: trackColor[p.track],
-                  backgroundColor: `color-mix(in srgb, ${trackColor[p.track]} 12%, white)`,
-                }}
+                className="font-[var(--font-mono)] text-[11px] font-medium uppercase tracking-[0.06em]"
+                style={{ color: trackColor[p.track] }}
               >
                 {tracks[p.track].label}
               </span>
-              <h3 className="mt-4 text-[18px] font-bold text-[var(--color-text)]">
-                {p.title}
-              </h3>
-              <div className="mt-1 flex items-center gap-2 font-[var(--font-mono)] text-[12px] text-[var(--color-text-tertiary)]">
-                <span>{p.duration}</span>
-                <span>·</span>
-                <span>{p.level}</span>
+              <div>
+                <h3 className="font-[var(--font-display)] text-[19px] font-semibold text-[var(--color-text)]">
+                  {p.title}
+                </h3>
+                <p className="mt-1 text-[13.5px] leading-relaxed text-[var(--color-text-secondary)] sm:max-w-[520px]">
+                  {p.desc}
+                </p>
+                <div className="mt-1.5 font-[var(--font-mono)] text-[11.5px] text-[var(--color-text-tertiary)]">
+                  {p.duration} · {p.level}
+                </div>
               </div>
-              <p className="mt-3 flex-1 text-[14px] leading-relaxed text-[var(--color-text-secondary)]">
-                {p.desc}
-              </p>
-              <div className="mt-5 flex items-center gap-1.5 border-t border-[var(--color-border)] pt-4 text-[13.5px] font-semibold text-[var(--color-text)]">
-                View program
-                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <div className="hidden items-center gap-1.5 text-[13.5px] font-medium text-[var(--color-text)] sm:flex">
+                View
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </div>
             </a>
           ))}

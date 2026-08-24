@@ -1,6 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { LogTag } from "@/components/ui/log-tag";
+import { FieldNote } from "@/components/ui/field-note";
 import { tracks, type Track } from "@/data/site";
 
 const trackColor: Record<Track, string> = {
@@ -13,43 +13,42 @@ export function CareerPaths() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <LogTag index={1}>Career Paths</LogTag>
-        <h2 className="mt-4 max-w-[520px] font-[var(--font-display)] text-[30px] font-bold leading-tight text-[var(--color-text)] md:text-[38px]">
+        <FieldNote index={1}>Career Paths</FieldNote>
+        <h2 className="mt-5 max-w-[520px] font-[var(--font-display)] text-[30px] font-semibold leading-tight text-[var(--color-text)] md:text-[36px]">
           Choose your technology career path
         </h2>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid divide-y divide-[var(--color-border)] border-t border-[var(--color-border)] md:grid-cols-3 md:divide-x md:divide-y-0">
           {(Object.entries(tracks) as [Track, (typeof tracks)[Track]][]).map(
-            ([key, t]) => (
+            ([key, t], i) => (
               <a
                 key={key}
                 href={t.href}
-                className="group flex flex-col rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-7 transition-shadow hover:shadow-[0_20px_40px_-24px_rgba(15,23,42,0.25)]"
+                className="group flex flex-col px-1 py-8 md:px-8 md:first:pl-0 md:last:pr-0"
               >
-                <span
-                  className="h-9 w-9 rounded-lg"
-                  style={{ backgroundColor: trackColor[key] }}
-                  aria-hidden
-                />
-                <h3 className="mt-6 font-[var(--font-display)] text-[21px] font-bold text-[var(--color-text)]">
+                <span className="font-[var(--font-mono)] text-[12px] text-[var(--color-text-tertiary)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3
+                  className="mt-4 font-[var(--font-display)] text-[22px] font-semibold"
+                  style={{ color: trackColor[key] }}
+                >
                   {t.label}
                 </h3>
-                <p className="mt-2.5 text-[14.5px] leading-relaxed text-[var(--color-text-secondary)]">
+                <p className="mt-3 text-[14.5px] leading-relaxed text-[var(--color-text-secondary)]">
                   {t.blurb}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {t.chips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="rounded-full border border-[var(--color-border)] px-2.5 py-1 text-[12px] font-medium text-[var(--color-text-secondary)]"
-                    >
+                <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-[12.5px] text-[var(--color-text-tertiary)]">
+                  {t.chips.map((chip, idx) => (
+                    <span key={chip}>
                       {chip}
+                      {idx < t.chips.length - 1 && <span className="ml-3 text-[var(--color-border-strong)]">/</span>}
                     </span>
                   ))}
                 </div>
-                <div className="mt-7 flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--color-text)]">
+                <div className="mt-6 flex items-center gap-1.5 text-[13.5px] font-medium text-[var(--color-text)]">
                   Explore {t.label}
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
               </a>
             )

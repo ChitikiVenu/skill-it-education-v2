@@ -1,8 +1,24 @@
-# Skill IT Education — Next.js Rebuild (in progress)
+# Skill IT Education — Next.js Rebuild, Editorial direction (in progress)
 
-This branch (`nextjs-rebuild`) is a ground-up rebuild of the marketing site
-as a production Next.js application. The `main` branch remains the live
-static HTML site — nothing here has been deployed yet.
+This branch (`nextjs-rebuild-editorial`, off `nextjs-rebuild`) applies an
+"editorial & calm" visual direction to the homepage: a warm paper ground,
+a literary serif for display type, and field-note-style captions in place
+of the earlier dark/terminal aesthetic. The `main` branch remains the live
+static HTML site — nothing here has been deployed or merged anywhere.
+
+## Design direction
+
+- **Palette**: warm paper (`#EFE9DD`) rather than the common cream/`#F4F1EA`
+  template default; ink-green accent (`#3B5D48`) rather than the equally
+  common terracotta. Track colors (indigo / ochre / ink-green) read as
+  field markers rather than primary-color chips.
+- **Type**: Source Serif 4 (a calm, low-contrast literary serif) for
+  headlines, Inter for body copy, JetBrains Mono for small utility labels.
+- **Signature**: section eyebrows are styled as a field-note dateline —
+  a thin rule beside a short italic caption — and the hero uses a
+  captioned spot illustration (styled like a documentary photo plate)
+  rather than fabricated stock photography of "real students," since no
+  real campus photography exists yet to use honestly.
 
 ## Stack
 
