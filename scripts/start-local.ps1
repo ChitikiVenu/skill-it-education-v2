@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 Set-Location $Root
 
-if (-not (Test-Path 'platform/.env.local')) { Copy-Item 'platform/.env.example' 'platform/.env.local' }
+if (-not (Test-Path 'platform/.env')) { Copy-Item 'platform/.env.example' 'platform/.env' }
 
 docker compose up -d
 npm install
