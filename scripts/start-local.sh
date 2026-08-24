@@ -2,7 +2,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
-if [ ! -f platform/.env.local ]; then cp platform/.env.example platform/.env.local; fi
+if [ ! -f platform/.env ]; then cp platform/.env.example platform/.env; fi
 echo "Starting Institute 9 PostgreSQL..."
 docker compose up -d
 echo "Installing packages..."
