@@ -5,6 +5,10 @@
 export const org = {
   name: "Skill IT Education",
   location: "Madhapur, Hyderabad",
+  address:
+    "2nd Floor, Arunodaya Co-Operative Society Housing Society Ltd, Plot No. 13, opposite Grand Spicy Bawarchi, Arunodaya Colony, Vittal Rao Nagar, Madhapur, Serilingampally, Hyderabad, Telangana 500081",
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=Arunodaya+Colony+Vittal+Rao+Nagar+Madhapur+Hyderabad+500081",
   phone: "+91 63628 68562",
   whatsapp: "https://wa.me/916362868562",
   email: "info@skilliteducation.com",
@@ -14,7 +18,14 @@ export type Track = "cyber" | "ai" | "data";
 
 export const tracks: Record<
   Track,
-  { label: string; blurb: string; chips: string[]; href: string }
+  {
+    label: string;
+    blurb: string;
+    chips: string[];
+    href: string;
+    heroTitle: string;
+    heroSub: string;
+  }
 > = {
   cyber: {
     label: "Cyber Security",
@@ -22,6 +33,9 @@ export const tracks: Record<
       "Defend real systems — SOC operations, penetration testing, cloud and network security.",
     chips: ["SOC Analyst", "Ethical Hacking", "VAPT"],
     href: "/cyber-security",
+    heroTitle: "Think like a defender, not just a test-taker",
+    heroSub:
+      "SOC operations, ethical hacking and penetration testing, taught through the actual workflow of a security team — alert, investigate, escalate, document.",
   },
   ai: {
     label: "Generative AI",
@@ -29,6 +43,9 @@ export const tracks: Record<
       "Build with LLMs, RAG pipelines and AI agents — from prototype to a working application.",
     chips: ["LLM Engineering", "RAG", "AI Agents"],
     href: "/generative-ai",
+    heroTitle: "Build with LLMs, not just prompt them",
+    heroSub:
+      "RAG pipelines, AI agents and LLM engineering, taught through the same workflow a production AI team uses — prototype, ground it in real data, then ship it.",
   },
   data: {
     label: "Data Science",
@@ -36,6 +53,9 @@ export const tracks: Record<
       "Turn raw data into decisions — Python, statistics, machine learning and dashboards.",
     chips: ["Data Analyst", "Machine Learning", "Power BI"],
     href: "/data-science",
+    heroTitle: "Turn raw data into decisions",
+    heroSub:
+      "Python, statistics, machine learning and dashboards — built around real business datasets, not toy CSVs.",
   },
 };
 
@@ -46,9 +66,11 @@ export type Program = {
   level: string;
   desc: string;
   href: string;
+  featured?: boolean;
 };
 
 export const programs: Program[] = [
+  // Cyber Security
   {
     track: "cyber",
     title: "SOC Analyst Training",
@@ -56,6 +78,7 @@ export const programs: Program[] = [
     level: "Beginner–Intermediate",
     desc: "From an incoming alert to log review, investigation, escalation and incident documentation.",
     href: "/courses/soc-analyst",
+    featured: true,
   },
   {
     track: "cyber",
@@ -64,7 +87,33 @@ export const programs: Program[] = [
     level: "Intermediate",
     desc: "Reconnaissance, exploitation and reporting — practiced in isolated lab environments.",
     href: "/courses/ethical-hacking",
+    featured: true,
   },
+  {
+    track: "cyber",
+    title: "Cloud Security",
+    duration: "10 weeks",
+    level: "Intermediate",
+    desc: "Secure AWS/Azure workloads — identity, network controls and monitoring, hands-on.",
+    href: "/courses/cloud-security",
+  },
+  {
+    track: "cyber",
+    title: "Digital Forensics & Incident Response",
+    duration: "10 weeks",
+    level: "Intermediate",
+    desc: "Evidence handling, timeline reconstruction and structured incident response.",
+    href: "/courses/digital-forensics",
+  },
+  {
+    track: "cyber",
+    title: "Network Security Foundations",
+    duration: "8 weeks",
+    level: "Beginner",
+    desc: "Firewalls, segmentation and the networking fundamentals every security role needs.",
+    href: "/courses/network-security",
+  },
+  // Generative AI
   {
     track: "ai",
     title: "GenAI & LLM Engineering",
@@ -72,6 +121,7 @@ export const programs: Program[] = [
     level: "Intermediate",
     desc: "Prompt engineering, RAG pipelines, vector databases and AI agents, built into a shipped project.",
     href: "/courses/genai-llm-engineering",
+    featured: true,
   },
   {
     track: "ai",
@@ -80,7 +130,41 @@ export const programs: Program[] = [
     level: "Beginner",
     desc: "AI APIs, automation workflows and the fundamentals behind modern AI products.",
     href: "/courses/ai-engineering",
+    featured: true,
   },
+  {
+    track: "ai",
+    title: "RAG Systems",
+    duration: "8 weeks",
+    level: "Intermediate",
+    desc: "Chunking, embeddings and retrieval — grounding an LLM's answers in your own documents.",
+    href: "/courses/rag",
+  },
+  {
+    track: "ai",
+    title: "AI Agents",
+    duration: "8 weeks",
+    level: "Intermediate",
+    desc: "Tool-using agents, orchestration and multi-step workflows with LLMs.",
+    href: "/courses/ai-agents",
+  },
+  {
+    track: "ai",
+    title: "Prompt Engineering",
+    duration: "4 weeks",
+    level: "Beginner",
+    desc: "Structured prompting, evaluation and reliable outputs from LLMs.",
+    href: "/courses/prompt-engineering",
+  },
+  {
+    track: "ai",
+    title: "AI Automation",
+    duration: "6 weeks",
+    level: "Beginner–Intermediate",
+    desc: "Connecting AI APIs into real workflows and automations.",
+    href: "/courses/ai-automation",
+  },
+  // Data Science
   {
     track: "data",
     title: "Data Analyst Track",
@@ -88,6 +172,7 @@ export const programs: Program[] = [
     level: "Beginner",
     desc: "Python, SQL and Power BI — joining and analyzing real business datasets end to end.",
     href: "/courses/data-analyst",
+    featured: true,
   },
   {
     track: "data",
@@ -96,6 +181,39 @@ export const programs: Program[] = [
     level: "Intermediate",
     desc: "From a clean dataset to a deployed model, with evaluation and monitoring built in.",
     href: "/courses/machine-learning",
+    featured: true,
+  },
+  {
+    track: "data",
+    title: "Data Analytics with Power BI & Tableau",
+    duration: "8 weeks",
+    level: "Beginner",
+    desc: "Building dashboards that answer real business questions, not just charts.",
+    href: "/courses/data-analytics",
+  },
+  {
+    track: "data",
+    title: "Data Engineering Foundations",
+    duration: "10 weeks",
+    level: "Intermediate",
+    desc: "ETL pipelines, data warehousing and the fundamentals of moving data reliably.",
+    href: "/courses/data-engineering",
+  },
+  {
+    track: "data",
+    title: "Statistics for Data Science",
+    duration: "6 weeks",
+    level: "Beginner",
+    desc: "The statistical foundation every data role actually uses day to day.",
+    href: "/courses/statistics",
+  },
+  {
+    track: "data",
+    title: "SQL for Data Analysis",
+    duration: "4 weeks",
+    level: "Beginner",
+    desc: "Querying, joining and shaping data across real multi-table datasets.",
+    href: "/courses/sql",
   },
 ];
 

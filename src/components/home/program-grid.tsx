@@ -11,6 +11,7 @@ const trackColor: Record<Track, string> = {
 };
 
 export function ProgramGrid() {
+  const featured = programs.filter((p) => p.featured);
   return (
     <section className="py-20 md:py-28">
       <Container>
@@ -27,7 +28,7 @@ export function ProgramGrid() {
         </div>
 
         <div className="mt-12 divide-y divide-[var(--color-border)] border-t border-[var(--color-border)]">
-          {programs.map((p) => (
+          {featured.map((p) => (
             <a
               key={p.href}
               href={p.href}
