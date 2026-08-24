@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { org, tracks } from "@/data/site";
 
 const columns = [
@@ -32,8 +33,14 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5 font-[var(--font-display)] font-extrabold text-[17px] text-[var(--color-text)]">
-              <span className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--color-ink-950)] text-[var(--color-paper-raised)] text-[13px] font-[var(--font-mono)]">
-                SI
+              <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--color-ink-950)] p-1.5">
+                <Image
+                  src="/logo-mark.png"
+                  alt="Skill IT Education"
+                  width={301}
+                  height={240}
+                  className="h-full w-full object-contain"
+                />
               </span>
               Skill IT Education
             </div>

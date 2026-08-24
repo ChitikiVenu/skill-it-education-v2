@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -37,8 +38,15 @@ export function Header() {
     >
       <Container className="flex h-[72px] items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 font-[var(--font-display)] font-semibold text-[18px] text-[var(--color-ink-950)]">
-          <span className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--color-ink-950)] text-[var(--color-paper-raised)] text-[13px] font-[var(--font-mono)]">
-            SI
+          <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--color-ink-950)] p-1.5">
+            <Image
+              src="/logo-mark.png"
+              alt="Skill IT Education"
+              width={301}
+              height={240}
+              className="h-full w-full object-contain"
+              priority
+            />
           </span>
           Skill IT
         </Link>
