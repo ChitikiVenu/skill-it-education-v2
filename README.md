@@ -47,19 +47,27 @@ static HTML site — nothing here has been deployed or merged anywhere.
 Verified: `tsc --noEmit` clean, `next build` clean, zero horizontal overflow
 at 375/390/430/768/1024/1280/1440/1920px viewports.
 
+## What's built so far
+
+- Homepage (Hero, Career Paths, Why Skill IT, Featured Programs, Learning
+  Journey, FAQ, Final CTA)
+- Vertical hub pages: `/cyber-security`, `/generative-ai`, `/data-science`
+  — each with a track-colored hero and the full list of programs in that
+  track (18 programs total, pulled from the real static site)
+- `/career-paths` — all 18 programs grouped by track on one page
+- `/contact` — real address, phone, email, WhatsApp link (Madhapur campus)
+- Header, Footer, reusable UI primitives (Button, Accordion, FieldNote)
+
+Verified: `tsc --noEmit` clean, `next build` clean (7 routes), zero
+horizontal overflow at 375/390/768/1440px across every page.
+
 ## Not built yet
 
-This is Phase 1–4 of a much larger brief (see project notes). Still to do:
-
-- Individual course pages, Cyber Security / Generative AI / Data Science
-  hub pages, career-paths, about, contact, blog
+- Individual course detail pages (18 pages, one per program)
 - Lead form (`Zod` validated) + CRM integration seam (`lib/crm`)
-- Analytics event tracking
-- Database (Prisma + Postgres) — **needs real credentials**, not something
-  that can be stood up from this environment
-- CMS wiring (Sanity) — **needs a real Sanity project/token**
-- Full technical SEO pass (structured data, sitemap, redirects from old URLs)
-- Accessibility and performance QA pass across all pages
+- Blog, About page
+- Database (Prisma + Postgres) / CMS (Sanity) — needs real credentials
+- Full technical SEO pass, analytics, accessibility audit
 
 ## Running locally
 
