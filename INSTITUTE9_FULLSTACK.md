@@ -10,10 +10,8 @@ The production direction for Institute 9 is now a real application under `platfo
 - **ORM / migrations:** Prisma 7
 - **Validation:** Zod
 - **Local database:** Docker Compose PostgreSQL
-- **SEO:** Next metadata + route-level metadata
+- **SEO:** Next metadata, sitemap and robots policy
 - **Responsive UI:** premium light interface aligned to the approved blue/purple visual direction
-
-Next.js is a full-stack React framework, so the application can keep the public UI and server-side application logic in one maintainable codebase. citeturn3search1
 
 ## Localhost setup
 
@@ -34,7 +32,7 @@ npm run dev
 
 Open **http://localhost:3000**.
 
-Prisma's development migration flow is `prisma migrate dev`; production should use `prisma migrate deploy`, not `migrate dev`. citeturn2search0turn2search1
+For production, apply checked-in Prisma migrations with `prisma migrate deploy` rather than the development `migrate dev` command.
 
 ## Main routes
 
@@ -68,4 +66,4 @@ The architecture is ready to add:
 9. Student portal / LMS
 10. Analytics and conversion tracking
 
-The current branch intentionally establishes the core platform first so these features can be added without rebuilding the public website.
+The current branch establishes the core platform first so these features can be added without rebuilding the public website.
