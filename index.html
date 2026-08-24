@@ -223,7 +223,6 @@
   </svg>
   <div class="blob-field" aria-hidden="true"><div class="blob blob-1 blob-gold" style="width:420px;height:420px;bottom:-220px;left:-260px;opacity:0.22;"></div><div class="blob blob-2 blob-blue" style="width:380px;height:380px;top:20px;right:-200px;opacity:0.2;"></div></div>
   <div class="wrap">
-    <img src="assets/logo-mark.png" alt="Skill IT Education" class="hero-logo-mark">
     <div class="hero-badge"><span class="dot"></span> New batches forming in <strong>Madhapur, Hyderabad</strong></div>
     <h1>We train you to become a<br><span class="rotator-text" id="role-rotator">SOC Analyst</span></h1>
     <div class="hero-grid" style="margin-top:36px">
@@ -247,79 +246,33 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <svg viewBox="0 0 520 460" width="100%" height="100%">
-        <defs>
-          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#1d4ed8"/>
-            <stop offset="1" stop-color="#eab308"/>
-          </linearGradient>
-        </defs>
-        <!-- connecting lines -->
-        <g stroke="url(#lineGrad)" stroke-width="1.3" opacity="0.5" fill="none">
-          <path d="M 120 100 L 400 90">
-            <animate attributeName="opacity" values="0.2;0.7;0.2" dur="4s" repeatCount="indefinite"/>
-          </path>
-          <path d="M 400 90 L 415 340">
-            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/>
-          </path>
-          <path d="M 415 340 L 125 365">
-            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M 125 365 L 120 100">
-            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M 120 100 L 415 340" stroke-dasharray="3 6" opacity="0.2"/>
-        </g>
-
-        <!-- node: cyber security -->
-        <g class="hv-float-1" style="transform-origin:120px 100px">
-          <g transform="translate(120,100)">
-            <circle r="48" fill="#101c30" stroke="#1d4ed8" stroke-width="1.6"/>
-            <path d="M-15 -7 L0 -16 L15 -7 V7 C15 17 8 22 0 25 C-8 22 -15 17 -15 7 Z" fill="none" stroke="#3b82f6" stroke-width="1.8"/>
-            <text y="68" text-anchor="middle" fill="#0f1729" font-family="Inter, sans-serif" font-weight="600" font-size="13">CYBER SECURITY</text>
-          </g>
-        </g>
-
-        <!-- node: genai -->
-        <g class="hv-float-2" style="transform-origin:400px 90px">
-          <g transform="translate(400,90)">
-            <circle r="52" fill="#101c30" stroke="#eab308" stroke-width="1.6"/>
-            <circle cx="-11" cy="0" r="7" fill="none" stroke="#fbbf24" stroke-width="1.8"/>
-            <circle cx="11" cy="-10" r="7" fill="none" stroke="#fbbf24" stroke-width="1.8"/>
-            <circle cx="11" cy="10" r="7" fill="none" stroke="#fbbf24" stroke-width="1.8"/>
-            <path d="M-5 -2 L7 -9 M-5 2 L7 9" stroke="#fbbf24" stroke-width="1.4"/>
-            <text y="72" text-anchor="middle" fill="#0f1729" font-family="Inter, sans-serif" font-weight="600" font-size="13">GENERATIVE AI</text>
-          </g>
-        </g>
-
-        <!-- node: data science -->
-        <g class="hv-float-3" style="transform-origin:415px 340px">
-          <g transform="translate(415,340)">
-            <circle r="50" fill="#101c30" stroke="#60a5fa" stroke-width="1.6"/>
-            <g stroke="#60a5fa" stroke-width="1.8" fill="none">
-              <path d="M-18 11 L-7 -5 L7 5 L18 -11"/>
-              <circle cx="-18" cy="11" r="2.4"/><circle cx="-7" cy="-5" r="2.4"/><circle cx="7" cy="5" r="2.4"/><circle cx="18" cy="-11" r="2.4"/>
-            </g>
-            <text y="70" text-anchor="middle" fill="#0f1729" font-family="Inter, sans-serif" font-weight="600" font-size="13">DATA SCIENCE</text>
-          </g>
-        </g>
-
-        <!-- floating pixel accents (echo logo) -->
-        <g fill="#1d4ed8" opacity="0.5">
-          <rect x="60" y="250" width="7" height="7"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/></rect>
-          <rect x="85" y="232" width="7" height="7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="3.4s" repeatCount="indefinite"/></rect>
-          <rect x="50" y="215" width="7" height="7"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.6s" repeatCount="indefinite"/></rect>
-        </g>
-
-        <!-- node: labs / practical -->
-        <g class="hv-float-4" style="transform-origin:125px 365px">
-          <g transform="translate(125,365)">
-            <circle r="46" fill="#101c30" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="3 4"/>
-            <text y="7" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-weight="700" font-size="17">LABS</text>
-            <text y="68" text-anchor="middle" fill="#0f1729" font-family="Inter, sans-serif" font-weight="600" font-size="13">PRACTICAL</text>
-          </g>
-        </g>
-      </svg>
+      <div class="orbit-stage">
+        <div class="orbit-photo">
+          <img src="assets/hero-students.png" alt="">
+        </div>
+        <div class="orbit-ring">
+          <div class="orbit-item" style="--angle:0deg">
+            <div class="orbit-icon cyber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+          </div>
+          <div class="orbit-item" style="--angle:90deg">
+            <div class="orbit-icon ai">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            </div>
+          </div>
+          <div class="orbit-item" style="--angle:180deg">
+            <div class="orbit-icon data">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+            </div>
+          </div>
+          <div class="orbit-item" style="--angle:270deg">
+            <div class="orbit-icon labs">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6l-6 10a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3L14 9V3"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   </div>
