@@ -1,0 +1,17 @@
+{
+  "name": "institute-9",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Institute 9 production ed-tech website monorepo",
+  "workspaces": ["platform"],
+  "scripts": {
+    "dev": "npm --workspace platform run dev",
+    "build": "npm --workspace platform run build",
+    "start": "npm --workspace platform run start",
+    "db:generate": "npm --workspace platform run db:generate",
+    "db:migrate": "npm --workspace platform run db:migrate",
+    "db:seed": "npm --workspace platform run db:seed",
+    "db:studio": "npm --workspace platform run db:studio"
+  },
+  "engines": { "node": ">=20.9.0" }
+}
