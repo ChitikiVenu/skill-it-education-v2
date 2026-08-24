@@ -56,18 +56,32 @@ at 375/390/430/768/1024/1280/1440/1920px viewports.
   track (18 programs total, pulled from the real static site)
 - `/career-paths` — all 18 programs grouped by track on one page
 - `/contact` — real address, phone, email, WhatsApp link (Madhapur campus)
+- `/courses/[slug]` — all 18 individual course detail pages (curriculum
+  modules, project, FAQ), data-driven from `src/data/course-details.ts`,
+  extracted from the real static course pages
 - Header, Footer, reusable UI primitives (Button, Accordion, FieldNote)
 
-Verified: `tsc --noEmit` clean, `next build` clean (7 routes), zero
-horizontal overflow at 375/390/768/1440px across every page.
+Verified: `tsc --noEmit` clean, `next build` clean (27 static routes,
+18 of them SSG'd course pages), zero horizontal overflow at
+375/390/768/1440px across every page type.
 
 ## Not built yet
 
-- Individual course detail pages (18 pages, one per program)
+Still ~230 pages of the original 254-page site to go, same data-driven-
+template approach as the course pages:
+
+- ~30 blog posts, ~140 glossary term pages, 8 certification pages,
+  7 comparison pages, 12 career roadmaps, 11 interview-question pages,
+  6 free tools, 8 location/training-near pages, About, Careers, Locations,
+  Resources, Events, legal pages (privacy/terms/refund/disclaimer)
 - Lead form (`Zod` validated) + CRM integration seam (`lib/crm`)
-- Blog, About page
 - Database (Prisma + Postgres) / CMS (Sanity) — needs real credentials
 - Full technical SEO pass, analytics, accessibility audit
+
+**This branch has not been merged to `main` and should not be merged
+until the full site is rebuilt and explicitly reviewed/approved** —
+merging partial rebuild work to `main` previously caused a production
+outage on the live site.
 
 ## Running locally
 
