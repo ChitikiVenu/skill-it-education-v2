@@ -1,0 +1,1 @@
+Transparent student image asset should be added here from the provided reference image. Placeholder file added temporarily so the homepage can reference a stable local asset path.
