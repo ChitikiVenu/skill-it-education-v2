@@ -14,6 +14,38 @@
   }, 1400);
 })();
 
+// Homepage hero — odometer-style single-role roller (one role visible at a time,
+// slow slide+fade transition, stays on the same line as the H1 prefix)
+(function(){
+  var el = document.getElementById('role-roll-text');
+  if (!el) return;
+  var roles = ['Cybersecurity Professional', 'Ethical Hacker', 'SOC Analyst', 'Security Engineer', 'Generative AI Professional', 'Data Scientist', 'AI Engineer'];
+  var i = 0;
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function next(){
+    if (prefersReduced) {
+      i = (i + 1) % roles.length;
+      el.textContent = roles[i];
+      return;
+    }
+    el.classList.add('roll-out');
+    setTimeout(function(){
+      i = (i + 1) % roles.length;
+      el.textContent = roles[i];
+      el.classList.remove('roll-out');
+      el.classList.add('no-transition', 'roll-in');
+      void el.offsetWidth; // force reflow so the jump below applies instantly
+      el.classList.remove('no-transition');
+      requestAnimationFrame(function(){
+        el.classList.remove('roll-in'); // animates back to resting position
+      });
+    }, 600);
+  }
+
+  setInterval(next, 2600);
+})();
+
 // Skill IT Education — shared site behaviors
 (function(){
   // Scroll-reveal: fade/slide elements into view as they enter viewport
