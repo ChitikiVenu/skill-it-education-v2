@@ -102,3 +102,31 @@
     });
   }
 })();
+
+// Courses nav menu — hover-intent with a short close delay so the dropdown
+// and its nested flyout don't vanish the instant the cursor dips off them
+// mid-move (fast/diagonal mouse paths were closing the menu before users
+// could reach the sub-course links).
+(function(){
+  function addHoverIntent(el, openClass, closeDelay){
+    var timer = null;
+    el.addEventListener('mouseenter', function(){
+      clearTimeout(timer);
+      el.classList.add(openClass);
+    });
+    el.addEventListener('mouseleave', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        el.classList.remove(openClass);
+      }, closeDelay);
+    });
+  }
+
+  var coursesItem = document.querySelector('.nav-item-courses');
+  if (coursesItem) addHoverIntent(coursesItem, 'force-open', 350);
+
+  document.querySelectorAll('.courses-cat').forEach(function(cat){
+    addHoverIntent(cat, 'force-open', 350);
+  });
+})();
+
