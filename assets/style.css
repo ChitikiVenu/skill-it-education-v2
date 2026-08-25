@@ -347,6 +347,15 @@ p{margin:0 0 1em;}
 .orbit-stage-mockup{
   width:380px;height:380px;margin:0 auto 20px;
 }
+.hero-photo-row{
+  display:flex;justify-content:center;margin-top:40px;
+}
+.orbit-stage-hero{
+  width:260px;height:260px;
+}
+.orbit-stage-hero .orbit-item{transform:rotate(var(--angle)) translateX(112px) rotate(calc(-1 * var(--angle)));}
+.orbit-stage-hero .orbit-icon{width:44px;height:44px;}
+.orbit-stage-hero .orbit-icon svg{width:19px;height:19px;}
 .orbit-photo{
   position:absolute;inset:38px;border-radius:16px;overflow:hidden;
   display:flex;align-items:flex-end;justify-content:center;
@@ -800,6 +809,8 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
   .hero-visual{height:280px;order:-1;}
   .orbit-stage{width:230px;height:230px;margin-top:14px;}
   .orbit-stage-mockup{width:230px;height:230px;margin:0 auto 20px;}
+  .orbit-stage-hero{width:210px;height:210px;}
+  .hero-photo-row{margin-top:24px;}
   .orbit-photo{inset:26px;}
   .orbit-item{transform:rotate(var(--angle)) translateX(106px) rotate(calc(-1 * var(--angle)));}
   .orbit-icon{width:40px;height:40px;}
