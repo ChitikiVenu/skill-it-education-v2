@@ -395,7 +395,7 @@ p{margin:0 0 1em;}
 .role-roll{
   position:relative;display:inline-block;overflow:hidden;
   height:1.16em;vertical-align:bottom;flex:none;
-  width:14ch;text-align:left;
+  width:11ch;text-align:left;
 }
 .role-roll-item{
   display:inline-block;
@@ -501,16 +501,21 @@ p{margin:0 0 1em;}
   display:inline-flex;align-items:baseline;gap:8px;
   font-family:var(--font-display);
   font-size:clamp(20px,2.6vw,30px);font-weight:800;letter-spacing:-0.01em;
+}
+.batch-hero-date-text{
   background:linear-gradient(135deg,var(--blue-light),var(--blue-deep));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .batch-hero-date svg{
   width:0.62em;height:0.62em;flex:none;align-self:center;
-  color:var(--blue-light);-webkit-text-fill-color:initial;
+  color:var(--blue-light);
 }
 .batch-hero-date sup{
-  font-size:0.42em;color:var(--gold-text);-webkit-text-fill-color:var(--gold-text);
-  text-decoration:underline;text-underline-offset:0.12em;text-decoration-thickness:2px;
+  font-size:0.5em;font-weight:800;line-height:0;
+  position:relative;top:-0.55em;
+  vertical-align:baseline;
+  margin-left:0.02em;
+  color:var(--blue-deep);-webkit-text-fill-color:var(--blue-deep);
 }
 
 

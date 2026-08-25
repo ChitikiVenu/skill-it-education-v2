@@ -22,7 +22,7 @@
   var el = document.getElementById('role-roll-text');
   var wrap = document.querySelector('.role-roll');
   if (!el || !wrap) return;
-  var roles = ['Cybersecurity Professional', 'Ethical Hacker', 'SOC Analyst', 'Security Engineer', 'Generative AI Professional', 'Data Scientist', 'AI Engineer'];
+  var roles = ['SOC Analyst', 'Ethical Hacker', 'AI Engineer', 'GenAI Engineer', 'Data Analyst', 'ML Engineer'];
   var i = 0;
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
