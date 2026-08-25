@@ -427,10 +427,13 @@ p{margin:0 0 1em;}
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .spotlight-card:hover{transform:translateY(-4px);box-shadow:0 30px 56px -24px rgba(15,23,42,0.28);}
+.spotlight-head-row{
+  display:flex;align-items:center;gap:10px;margin-bottom:10px;
+}
 .spotlight-icon{
-  width:34px;height:34px;border-radius:10px;
+  width:34px;height:34px;border-radius:10px;flex:none;
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:8px;color:#fff;
+  color:#fff;
 }
 .spotlight-icon svg{width:16px;height:16px;}
 .spotlight-cyber .spotlight-icon{background:linear-gradient(135deg,var(--blue-light),var(--blue-deep));box-shadow:0 10px 22px -8px var(--blue-glow);}
@@ -442,7 +445,7 @@ p{margin:0 0 1em;}
 .spotlight-ai .spotlight-eyebrow{color:#7c3aed;}
 .spotlight-heading-lg{
   font-size:19px;letter-spacing:.01em;text-transform:none;
-  line-height:1.22;margin:3px 0 8px;
+  line-height:1.22;margin:0;
 }
 .spotlight-desc{
   font-size:12px;line-height:1.42;color:var(--ink-2);margin-bottom:8px;
