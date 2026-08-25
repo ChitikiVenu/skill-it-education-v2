@@ -15,13 +15,46 @@
 })();
 
 // Homepage hero — odometer-style single-role roller (one role visible at a time,
-// slow slide+fade transition, stays on the same line as the H1 prefix)
+// slow slide+fade transition, stays on the same line as the H1 prefix).
+// The role container is measured and locked to the widest role's rendered
+// width so the constant prefix text never shifts as the role changes.
 (function(){
   var el = document.getElementById('role-roll-text');
-  if (!el) return;
+  var wrap = document.querySelector('.role-roll');
+  if (!el || !wrap) return;
   var roles = ['Cybersecurity Professional', 'Ethical Hacker', 'SOC Analyst', 'Security Engineer', 'Generative AI Professional', 'Data Scientist', 'AI Engineer'];
   var i = 0;
   var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function lockWidth(){
+    var h1 = document.querySelector('.hero .hero-h1-inline');
+    if (h1 && getComputedStyle(h1).whiteSpace === 'normal') {
+      // Mobile wrap fallback: role sits on its own centered line, no fixed width needed
+      wrap.style.width = '';
+      return;
+    }
+    // Measure every role at the current computed font, lock the container
+    // to the widest one so it never resizes/recenters as roles change.
+    var measurer = document.createElement('span');
+    var cs = getComputedStyle(el);
+    measurer.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none;top:-9999px;left:-9999px;' +
+      'font-family:' + cs.fontFamily + ';font-size:' + cs.fontSize + ';font-weight:' + cs.fontWeight + ';letter-spacing:' + cs.letterSpacing + ';';
+    document.body.appendChild(measurer);
+    var max = 0;
+    for (var r = 0; r < roles.length; r++) {
+      measurer.textContent = roles[r];
+      max = Math.max(max, measurer.offsetWidth);
+    }
+    document.body.removeChild(measurer);
+    wrap.style.width = max + 'px';
+  }
+
+  lockWidth();
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(lockWidth, 150);
+  });
 
   function next(){
     if (prefersReduced) {
