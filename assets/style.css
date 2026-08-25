@@ -440,9 +440,9 @@ p{margin:0 0 1em;}
 }
 .spotlight-cyber .spotlight-eyebrow{color:var(--blue);}
 .spotlight-ai .spotlight-eyebrow{color:#7c3aed;}
-.spotlight-title{
-  font-size:15.5px;font-weight:800;letter-spacing:-0.01em;line-height:1.2;
-  color:var(--ink-0);margin:3px 0 6px;
+.spotlight-heading-lg{
+  font-size:19px;letter-spacing:.01em;text-transform:none;
+  line-height:1.22;margin:3px 0 8px;
 }
 .spotlight-desc{
   font-size:12px;line-height:1.42;color:var(--ink-2);margin-bottom:8px;
@@ -1013,7 +1013,7 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
   .batch-hero-pill{padding:6px 12px;font-size:10px;}
   .batch-hero-line{font-size:14px;}
   .spotlight-card{padding:24px 20px 22px;}
-  .spotlight-title{font-size:19px;}
+  .spotlight-heading-lg{font-size:17px;}
 
   /* Platform mockup — stack sidebar above content and let cards wrap
      instead of overflowing the viewport width */
