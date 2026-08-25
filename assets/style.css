@@ -343,11 +343,12 @@ p{margin:0 0 1em;}
   display:grid;
   grid-template-columns:minmax(140px,220px) minmax(0,1fr) minmax(140px,220px);
   align-items:end;
-  gap:8px;
+  gap:20px;
 }
 .hero-center{
-  max-width:680px;margin:0 auto;text-align:center;
+  max-width:860px;margin:0 auto;text-align:center;
   padding-bottom:12px;
+  position:relative;z-index:2;
 }
 .hero-h1{
   font-size:clamp(30px,4.4vw,52px);font-weight:800;letter-spacing:-0.02em;
@@ -355,7 +356,7 @@ p{margin:0 0 1em;}
 }
 .hero-student{
   position:relative;align-self:end;justify-self:center;
-  width:100%;max-width:220px;
+  width:100%;max-width:220px;z-index:1;
   filter:drop-shadow(0 24px 32px rgba(15,23,42,0.16));
 }
 .hero-student img{
@@ -407,6 +408,69 @@ p{margin:0 0 1em;}
 
 .hero-center .hero-sub{margin-left:auto;margin-right:auto;text-align:center;}
 
+/* Course spotlight cards (Cyber Security / AI Engineering — Level 1) */
+.hero-spotlight{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;
+  width:100%;margin:8px 0 26px;text-align:left;
+}
+.spotlight-card{
+  position:relative;background:#fff;border-radius:22px;
+  border:1px solid var(--line-strong);
+  box-shadow:0 24px 48px -28px rgba(15,23,42,0.22);
+  padding:30px 28px 28px;
+  display:flex;flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.spotlight-card:hover{transform:translateY(-4px);box-shadow:0 30px 56px -24px rgba(15,23,42,0.28);}
+.spotlight-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;color:#fff;
+}
+.spotlight-icon svg{width:24px;height:24px;}
+.spotlight-cyber .spotlight-icon{background:linear-gradient(135deg,var(--blue-light),var(--blue-deep));box-shadow:0 10px 22px -8px var(--blue-glow);}
+.spotlight-ai .spotlight-icon{background:linear-gradient(135deg,#a78bfa,#6d28d9);box-shadow:0 10px 22px -8px rgba(109,40,217,0.4);}
+.spotlight-eyebrow{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+}
+.spotlight-cyber .spotlight-eyebrow{color:var(--blue);}
+.spotlight-ai .spotlight-eyebrow{color:#7c3aed;}
+.spotlight-title{
+  font-size:22px;font-weight:800;letter-spacing:-0.01em;line-height:1.25;
+  color:var(--ink-0);margin:6px 0 12px;
+}
+.spotlight-desc{font-size:14.5px;line-height:1.6;color:var(--ink-2);margin-bottom:18px;}
+.spotlight-list{display:flex;flex-direction:column;gap:9px;margin-bottom:24px;flex:1;}
+.spotlight-list li{
+  display:flex;align-items:flex-start;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink-1);
+}
+.spotlight-list li::before{
+  content:'';flex:none;width:16px;height:16px;margin-top:1.5px;border-radius:50%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;background-size:10px;
+}
+.spotlight-cyber .spotlight-list li::before{background-color:var(--blue-light);}
+.spotlight-ai .spotlight-list li::before{background-color:#7c3aed;}
+.spotlight-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-size:13.5px;font-weight:700;letter-spacing:0.01em;text-align:center;
+  padding:15px 20px;border-radius:100px;color:#fff;margin-top:auto;
+  transition:transform .15s ease, box-shadow .2s ease;
+}
+.spotlight-cta:hover{transform:translateY(-1px);}
+.spotlight-cta span{transition:transform .15s ease;}
+.spotlight-cta:hover span{transform:translateX(3px);}
+.spotlight-cta-cyber{background:linear-gradient(135deg,var(--blue-light),var(--blue) 55%,#1a3fb0);box-shadow:0 12px 26px -10px var(--blue-glow);}
+.spotlight-cta-ai{background:linear-gradient(135deg,#a78bfa,#7c3aed 55%,#5b21b6);box-shadow:0 12px 26px -10px rgba(109,40,217,0.45);}
+
+.hero-secondary-links{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:14px;color:var(--ink-2);margin-top:2px;
+}
+.hero-secondary-links a{color:var(--ink-1);font-weight:600;transition:color .15s ease;}
+.hero-secondary-links a:hover{color:var(--blue);}
+.hero-secondary-dot{color:var(--gold-text);opacity:.6;}
+
 /* Batch announcement */
 .batch-announce{
   display:inline-flex;align-items:center;gap:14px;
@@ -430,7 +494,7 @@ p{margin:0 0 1em;}
 .batch-announce-date strong{color:var(--ink-0);font-weight:800;}
 .batch-announce-date strong sup{color:var(--blue);font-size:0.6em;}
 
-.hero-center .hero-ctas{justify-content:center;}
+
 .orbit-photo{
   position:absolute;inset:38px;border-radius:16px;overflow:hidden;
   display:flex;align-items:flex-end;justify-content:center;
@@ -881,9 +945,10 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
   .site-header{margin:10px 12px 0;}
   .header-inner{gap:8px;}
   .hero-grid{grid-template-columns:1fr;}
-  .hero-composition{grid-template-columns:minmax(100px,150px) minmax(0,1fr) minmax(100px,150px);gap:4px;}
-  .hero-student{max-width:150px;}
+  .hero-composition{grid-template-columns:1fr;}
+  .hero-student{display:none;}
   .batch-announce{padding:10px 18px 10px 12px;}
+  .hero-spotlight{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto;}
 
   .pillars, .course-grid, .project-grid{grid-template-columns:1fr;}
   .method-steps{grid-template-columns:1fr 1fr;gap:24px;}
@@ -909,13 +974,15 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
     grid-template-areas:"left right" "center center";
     align-items:end;row-gap:4px;
   }
-  .hero-student{max-width:108px;}
+  .hero-student{display:block;max-width:108px;}
   .hero-student-left{grid-area:left;justify-self:end;}
   .hero-student-right{grid-area:right;justify-self:start;}
   .hero-center{grid-area:center;max-width:100%;}
   .role-marquee-item{font-size:19px;padding:0 12px;}
   .batch-announce{padding:9px 14px 9px 10px;gap:10px;}
   .batch-announce-date{font-size:13px;}
+  .spotlight-card{padding:24px 20px 22px;}
+  .spotlight-title{font-size:19px;}
 
   /* Platform mockup — stack sidebar above content and let cards wrap
      instead of overflowing the viewport width */
