@@ -467,36 +467,46 @@ p{margin:0 0 1em;}
 .spotlight-cta-cyber{background:linear-gradient(135deg,var(--blue-light),var(--blue) 55%,#1a3fb0);box-shadow:0 12px 26px -10px var(--blue-glow);}
 .spotlight-cta-ai{background:linear-gradient(135deg,#a78bfa,#7c3aed 55%,#5b21b6);box-shadow:0 12px 26px -10px rgba(109,40,217,0.45);}
 
-.hero-secondary-links{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  font-size:14px;color:var(--ink-2);margin-top:2px;
+.hero-cta-row{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;
+  margin-top:8px;
 }
-.hero-secondary-links a{color:var(--ink-1);font-weight:600;transition:color .15s ease;}
-.hero-secondary-links a:hover{color:var(--blue);}
-.hero-secondary-dot{color:var(--gold-text);opacity:.6;}
 
-/* Batch announcement */
-.batch-announce{
-  display:inline-flex;align-items:center;gap:14px;
-  margin:2px auto 28px;padding:12px 22px 12px 14px;
-  background:linear-gradient(135deg,rgba(29,78,216,0.07),rgba(234,179,8,0.08));
-  border:1px solid rgba(234,179,8,0.32);border-radius:100px;
-  box-shadow:0 12px 30px -16px rgba(29,78,216,0.28);
+/* Upcoming batch — bold, premium announcement treatment */
+.batch-hero{
+  display:flex;flex-direction:column;align-items:center;
+  margin:10px 0 26px;
 }
-.batch-announce-icon{
-  display:flex;align-items:center;justify-content:center;flex:none;
-  width:36px;height:36px;border-radius:50%;
-  background:linear-gradient(135deg,var(--blue-light),var(--blue-deep));color:#fff;
+.batch-hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 18px;border-radius:100px;margin-bottom:14px;
+  background:linear-gradient(135deg,rgba(29,78,216,0.09),rgba(234,179,8,0.1));
+  border:1px solid rgba(234,179,8,0.35);
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--gold-text);
 }
-.batch-announce-icon svg{width:18px;height:18px;}
-.batch-announce-text{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;}
-.batch-announce-label{
-  font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gold-text);font-weight:700;
+.batch-hero-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none;
+  box-shadow:0 0 0 3px rgba(234,179,8,0.25);animation:pulseDot 2s infinite;
 }
-.batch-announce-date{font-size:14.5px;color:var(--ink-1);}
-.batch-announce-date strong{color:var(--ink-0);font-weight:800;}
-.batch-announce-date strong sup{color:var(--blue);font-size:0.6em;}
+.batch-hero-line{
+  font-size:clamp(15px,1.7vw,19px);font-weight:600;color:var(--ink-2);margin-bottom:4px;
+}
+.batch-hero-date{
+  display:inline-flex;align-items:baseline;gap:10px;
+  font-family:var(--font-display);
+  font-size:clamp(28px,4.6vw,50px);font-weight:800;letter-spacing:-0.01em;
+  background:linear-gradient(135deg,var(--blue-light),var(--blue-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.batch-hero-date svg{
+  width:0.62em;height:0.62em;flex:none;align-self:center;
+  color:var(--blue-light);-webkit-text-fill-color:initial;
+}
+.batch-hero-date sup{
+  font-size:0.42em;color:var(--gold-text);-webkit-text-fill-color:var(--gold-text);
+  text-decoration:underline;text-underline-offset:0.12em;text-decoration-thickness:2px;
+}
 
 
 .orbit-photo{
@@ -951,7 +961,7 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
   .hero-grid{grid-template-columns:1fr;}
   .hero-composition{grid-template-columns:1fr;}
   .hero-student{display:none;}
-  .batch-announce{padding:10px 18px 10px 12px;}
+  .batch-hero-pill{padding:6px 14px;}
   .hero-spotlight{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto;}
 
   .pillars, .course-grid, .project-grid{grid-template-columns:1fr;}
@@ -987,8 +997,8 @@ footer{background:var(--navy-950);border-top:1px solid var(--line);padding:64px 
     row-gap:4px;line-height:1.22;
   }
   .role-roll{height:auto;overflow:visible;}
-  .batch-announce{padding:9px 14px 9px 10px;gap:10px;}
-  .batch-announce-date{font-size:13px;}
+  .batch-hero-pill{padding:6px 12px;font-size:10px;}
+  .batch-hero-line{font-size:14px;}
   .spotlight-card{padding:24px 20px 22px;}
   .spotlight-title{font-size:19px;}
 
