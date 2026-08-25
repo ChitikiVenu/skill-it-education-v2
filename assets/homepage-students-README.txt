@@ -1,0 +1,1 @@
+Homepage student image placement for the Sept 13 hero. The provided transparent student images should be stored as homepage-student-left.png and homepage-student-right.png in this directory. The homepage is already wired to these stable local asset paths.
