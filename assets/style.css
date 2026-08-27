@@ -412,6 +412,39 @@ p{margin:0 0 1em;}
   max-width:720px;
 }
 .hero h1{font-size:clamp(28px,4.6vw,58px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;}
+.hero h1 em.accent{
+  font-style:normal;color:var(--blue-light);
+  position:relative;display:inline-block;padding-bottom:6px;
+  background-image:linear-gradient(90deg,var(--blue-light),var(--gold));
+  background-repeat:no-repeat;background-position:0 100%;background-size:100% 4px;
+}
+.hero-stats{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;}
+.hero-stat{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink-1);}
+.hero-stat svg{width:17px;height:17px;color:var(--blue-light);flex:none;}
+
+/* Outcome cards (career paths a program leads to) */
+.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.outcome-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:22px 20px;display:flex;flex-direction:column;gap:10px;
+  box-shadow:0 2px 8px rgba(15,23,42,0.04);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.outcome-card:hover{transform:translateY(-3px);}
+.outcome-icon{
+  width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+}
+.outcome-icon svg{width:20px;height:20px;}
+.outcome-card h4{font-size:16.5px;}
+.outcome-card p{font-size:13.5px;color:var(--ink-2);}
+.outcome-demand{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text);margin-top:auto;padding-top:4px;}
+@media (max-width:900px){.outcome-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.outcome-grid{grid-template-columns:1fr;}}
+
+/* Value-prop strip above the final CTA */
+.value-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:36px;margin-bottom:8px;}
+.value-strip-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--ink-1);}
+.value-strip-item svg{width:20px;height:20px;color:var(--blue-light);flex:none;}
+
 .hero h1 em{font-style:normal;color:var(--blue-light);}
 .hero-sub{font-size:15.5px;color:var(--ink-2);max-width:560px;margin-bottom:10px;line-height:1.45;}
 .hero-features{display:flex;flex-direction:column;gap:10px;margin-bottom:30px;}
