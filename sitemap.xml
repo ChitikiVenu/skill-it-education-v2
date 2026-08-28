@@ -199,7 +199,7 @@
   <url><loc>https://www.skilliteducation.com/glossary.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.skilliteducation.com/how-to-choose-a-training-program.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.skilliteducation.com/hyderabad-training-guide.html</loc><priority>0.6</priority></url>
-  <url><loc>https://www.skilliteducation.com/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://www.skilliteducation.com/</loc><priority>1.0</priority></url>
   <url><loc>https://www.skilliteducation.com/interview-questions-cloud-security.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.skilliteducation.com/interview-questions-data-analyst.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.skilliteducation.com/interview-questions-ethical-hacking.html</loc><priority>0.6</priority></url>
@@ -254,4 +254,10 @@
   <url><loc>https://www.skilliteducation.com/training-near-kondapur.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.skilliteducation.com/training-near-kukatpally.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.skilliteducation.com/training-near-secunderabad.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.skilliteducation.com/ai-builder-automation-course.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.skilliteducation.com/ai-for-professionals-course.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.skilliteducation.com/ai-solutions-engineer-course.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.skilliteducation.com/courses.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.skilliteducation.com/data-scientist-course.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.skilliteducation.com/mlops-llmops-course.html</loc><priority>0.6</priority></url>
 </urlset>
